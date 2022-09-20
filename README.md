@@ -1,1 +1,3 @@
-# encore-artist-UI-kit
+# EncoreUI
+
+A description of this package.
