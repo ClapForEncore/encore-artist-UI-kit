@@ -24,11 +24,7 @@ struct Preview: PreviewProvider {
                 }
             }
             bottomMenu
-            
         }
-//        .onAppear {
-//            EncoreUI.registerFonts()
-//        }
         .previewInterfaceOrientation(.portrait)
     }
     

@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-extension Image {
+public extension Image {
     static var verifiedIcon: Image { Image("verifiedIcon", bundle: .module) }
     static var enterLobby: Image { Image("enterLobby", bundle: .module) }
     static var encoreLogoECentered: Image { Image("encoreLogoECentered", bundle: .module) }

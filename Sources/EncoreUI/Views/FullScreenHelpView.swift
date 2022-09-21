@@ -9,11 +9,11 @@ import SwiftUI
 
 //rocket, encoreAtm, badSignal, microphoneWhite, stage
 
-struct FullScreenHelpView: View {
+public struct FullScreenHelpView: View {
     
     @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
     
-    var body: some View {
+    public var body: some View {
         
         ZStack {
             Color.black.ignoresSafeArea()
@@ -66,15 +66,5 @@ struct FullScreenHelpView_Previews: PreviewProvider {
     static var previews: some View {
         FullScreenHelpView()
             .previewInterfaceOrientation(.landscapeLeft)
-    }
-}
-
-struct Blur: UIViewRepresentable {
-    var style: UIBlurEffect.Style = .systemUltraThinMaterialDark
-    func makeUIView(context: Context) -> UIVisualEffectView {
-        return UIVisualEffectView(effect: UIBlurEffect(style: style))
-    }
-    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
-        uiView.effect = UIBlurEffect(style: style)
     }
 }

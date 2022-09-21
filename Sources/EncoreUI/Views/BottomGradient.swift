@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct BottomGradient: View {
-    var body: some View {
+public struct BottomGradient: View {
+    public var body: some View {
         VStack {
             Spacer()
             LinearGradient(colors: [Color.black.opacity(0), .black], startPoint: .top, endPoint: .bottom)

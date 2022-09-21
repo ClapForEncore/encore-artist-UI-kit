@@ -25,7 +25,7 @@ struct DropDownMenu_Previews: PreviewProvider {
     }
 }
 
-struct DropDownMenu: View {
+public struct DropDownMenu: View {
     
     @EnvironmentObject var model : TestModel
     @Namespace var nameSpace
@@ -34,7 +34,7 @@ struct DropDownMenu: View {
     @State private var showOptions = false
     
     
-    var body: some View {
+    public var body: some View {
         
         Button {
             withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {

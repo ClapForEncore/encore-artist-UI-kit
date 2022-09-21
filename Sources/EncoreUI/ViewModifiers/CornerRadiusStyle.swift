@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CornerRadiusStyle: ViewModifier {
+public struct CornerRadiusStyle: ViewModifier {
     var radius: CGFloat
     var corners: UIRectCorner
 
@@ -22,7 +22,7 @@ struct CornerRadiusStyle: ViewModifier {
         }
     }
 
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
             .clipShape(CornerRadiusShape(radius: radius, corners: corners))
     }

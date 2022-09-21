@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-enum TextFieldSize: CGFloat {
+public enum TextFieldSize: CGFloat {
     case small = 10
     case medium = 14
     case big = 16
 }
 
-extension TextField {
+public extension TextField {
     func encoreStyle(size: TextFieldSize = .medium, showBackground: Bool = true) -> some View {
         
         self.inter(size: size.rawValue)

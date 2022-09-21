@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct UserIcon: View {
+public struct UserIcon: View {
     @State var image = Image.userCircle
-    var body: some View {
+    public var body: some View {
         
         ZStack {
             Circle()

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension View {
+public extension View {
     func inter(size: CGFloat) ->            some View { self.font(.inter(size: size)) }
     func interBold(size: CGFloat) ->        some View { self.font(.interBold(size: size)) }
     func interSemiBold(size: CGFloat) ->    some View { self.font(.interSemiBold(size: size)) }

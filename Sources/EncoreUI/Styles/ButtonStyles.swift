@@ -5,26 +5,40 @@
 //
 import SwiftUI
 
-struct UnityButtonStyle_Previews: PreviewProvider {
+public struct Darker: ButtonStyle {
+    public func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .overlay(Color.black.opacity(configuration.isPressed ? 0.3 : 0))
+    }
+}
+
+
+public struct ColorButtonStyle: ButtonStyle {
+    
+    var fontColor: Color = .encoreNeon
+    var color: Color = .encoreNeon
+    var height: ButtonHeight = .medium
+    
+    public func makeBody(configuration: Configuration) -> some View {
         
-    static var previews: some View {
-        VStack {
-
-            Button { } label: {
-                Text("UP")
-            }.buttonStyle(CursorButtonStyle())
-            
-
+        ZStack {
+            color.frame(height: height.rawValue)
+            configuration.label
+                .font(.system(size: 12, weight: .regular, design: .default))
+                .foregroundColor(fontColor)
         }
-}
+        .cornerRadius(9)
+        .overlay(Color.black.opacity(configuration.isPressed ? 0.3 : 0))
+        
+    }
 }
 
-struct CursorButtonStyle: ButtonStyle {
+public struct CursorButtonStyle: ButtonStyle {
 
     var color: Color = .encoreNeon
     var transparent = false
     
-    func makeBody(configuration: Configuration) -> some View {
+    public func makeBody(configuration: Configuration) -> some View {
         VStack(spacing: 5) {
             ZStack {
                 Circle()
@@ -38,6 +52,26 @@ struct CursorButtonStyle: ButtonStyle {
                     .font(.system(size: 7, weight: .bold))
             }
             .frame(width: 46, height: 46)
+        }
+    }
+}
+
+struct CursorButtonStyle_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        VStack {
+            
+            Button {
+                
+            } label: {
+                Text("ENCORE")
+            }
+            .buttonStyle(ColorButtonStyle())
+
+            
+            Button { } label: {
+                Text("UP")
+            }.buttonStyle(CursorButtonStyle())
         }
     }
 }

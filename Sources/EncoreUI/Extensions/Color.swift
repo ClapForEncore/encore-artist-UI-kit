@@ -29,7 +29,7 @@ struct EncoreColorsView_Previews: PreviewProvider {
     }
 }
 
-extension Color {
+public extension Color {
         
     
     static var transparentWhite: Color {

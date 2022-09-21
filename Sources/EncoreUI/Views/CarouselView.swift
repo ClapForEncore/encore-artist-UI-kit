@@ -33,7 +33,7 @@ struct CarouselPreview: PreviewProvider {
     }
 }
 
-struct CarouselView<Label: View, Content: View>: View {
+public struct CarouselView<Label: View, Content: View>: View {
     
     var label: Label
     var content: Content
@@ -41,7 +41,7 @@ struct CarouselView<Label: View, Content: View>: View {
     private let start = Gradient.Stop(color: Color.white.opacity(0),location: 0)
     private let end = Gradient.Stop(color: .white,location: 0.08)
 
-    var body: some View {
+    public var body: some View {
         HStack(spacing: 0) {
                 label
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -64,9 +64,9 @@ struct CarouselView<Label: View, Content: View>: View {
         }
 }
 
-struct CreateNewShowTile: View {
+public struct CreateNewShowTile: View {
     @State var action: () -> Void
-    var body: some View {
+    public var body: some View {
         TileView {
             VStack {
                 Image.plusCircle

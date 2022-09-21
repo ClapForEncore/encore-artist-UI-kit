@@ -7,16 +7,28 @@
 
 import SwiftUI
 
-struct ShowStatusBar: View {
+public struct ShowStatusBar: View {
     
     @Binding var showName: String?
     @Binding var fans: Int
     @Binding var claps: Int
-    @State var action: () -> ()
-    @State var barTapped: () -> ()
+    @State var action: () -> Void
+    @State var barTapped: () -> Void
     
-    var body: some View {
-       
+    public init(showName: Binding<String?>,
+                fans: Binding<Int>,
+                claps: Binding<Int>,
+                action: @escaping () -> Void,
+                barTapped: @escaping () -> Void) {
+        self._showName = showName
+        self._fans = fans
+        self._claps = claps
+        self.action = action
+        self.barTapped = barTapped
+    }
+    
+    public var body: some View {
+        
         HStack {
             UserIcon()
             barInfo
@@ -68,7 +80,7 @@ struct ShowStatusBar: View {
     struct NumberView: View {
         @State var iconName = "personIcon"
         @Binding var number: Int
-
+        
         var body: some View {
             HStack {
                 Image(iconName, bundle: .module)
@@ -83,21 +95,21 @@ struct ShowStatusBar_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black.ignoresSafeArea()
-                VStack {
-                    ShowStatusBar(showName: .constant("This Is The Name Of Your Show"),
-                                  fans: .constant(1239),
-                                  claps: .constant(234245)) {
-                        print("do something")
-                    } barTapped: {
-                        print("edit show or something like that")
-                    }
-                    ZStack {
-                        Image("livingRoom", bundle: .module)
-                            .resizable()
-                            .aspectRatio(9/16, contentMode: .fit)
-                        ToolBar().padding()
-                    }
+            VStack {
+                ShowStatusBar(showName: .constant("This Is The Name Of Your Show"),
+                              fans: .constant(1239),
+                              claps: .constant(234245)) {
+                    print("do something")
+                } barTapped: {
+                    print("edit show or something like that")
                 }
+                ZStack {
+                    Image("livingRoom", bundle: .module)
+                        .resizable()
+                        .aspectRatio(9/16, contentMode: .fit)
+                    ToolBar().padding()
+                }
+            }
             BottomGradient()
             
             VStack {
@@ -109,12 +121,12 @@ struct ShowStatusBar_Previews: PreviewProvider {
                     TileView { Color.red }
                     TileView { Text("ENCORE STUDIO APP") }
                 }
-                                
+                             
                 )
             }
             
             
-                
+            
         }
         .previewInterfaceOrientation(.landscapeLeft)
     }

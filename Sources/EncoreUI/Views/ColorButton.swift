@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum ButtonHeight: CGFloat {
+public enum ButtonHeight: CGFloat {
     case small = 38
     case medium = 50
     case large = 60
@@ -62,7 +62,7 @@ struct ColorButton_Previews: PreviewProvider {
     }
 }
 
-struct ColorButton: View {
+public struct ColorButton: View {
     
     @State var icon: Image? = nil
     @State var label: String
@@ -72,7 +72,7 @@ struct ColorButton: View {
     @State var action: () -> Void
     
     
-    var body: some View {
+    public var body: some View {
         
         Button {
             action()
@@ -101,22 +101,4 @@ struct ColorButton: View {
     }
 }
 
-struct ColorButtonStyle: ButtonStyle {
-    
-    var fontColor: Color = .encoreNeon
-    var color: Color = .encoreNeon
-    var height: ButtonHeight
-    
-    func makeBody(configuration: Configuration) -> some View {
-        
-        ZStack {
-            color.frame(height: height.rawValue)
-            configuration.label
-                .font(.system(size: 12, weight: .regular, design: .default))
-                .foregroundColor(fontColor)
-        }
-        .cornerRadius(9)
-        .overlay(Color.black.opacity(configuration.isPressed ? 0.3 : 0))
-        
-    }
-}
+
