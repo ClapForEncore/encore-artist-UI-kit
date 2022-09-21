@@ -27,10 +27,9 @@ struct CarouselPreview: PreviewProvider {
                 })
                 .padding(.leading)
                 .padding(.bottom)
-                
             }.inter(size: 12)
-            
-        }.onAppear { EncoreUI.registerFonts() }.previewInterfaceOrientation(.portrait)
+    }
+        .previewInterfaceOrientation(.portrait)
     }
 }
 

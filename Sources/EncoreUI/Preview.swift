@@ -25,9 +25,11 @@ struct Preview: PreviewProvider {
             }
             bottomMenu
             
-        }.onAppear {
-            EncoreUI.registerFonts()
-        }.previewInterfaceOrientation(.portrait)
+        }
+//        .onAppear {
+//            EncoreUI.registerFonts()
+//        }
+        .previewInterfaceOrientation(.portrait)
     }
     
     static var signalStrength: some View {
