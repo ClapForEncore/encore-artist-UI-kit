@@ -14,7 +14,6 @@ struct ToolBar_Previews: PreviewProvider {
             Color.black.ignoresSafeArea()
             ToolBar()
         }
-        //.aspectRatio(9/16, contentMode: .fit)
         .previewInterfaceOrientation(.landscapeLeft)
     }
 }

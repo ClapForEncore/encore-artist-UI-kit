@@ -48,7 +48,7 @@ struct Preview: PreviewProvider {
         
         VStack {
             Spacer()
-            CarouselView(label: CreateNewShowTile() { },
+            CarouselView(label: CreateNewTile(label: "Show") { },
                          content: Group {
                 TileView { Text("Hello") }
                 TileView { Color.encorePurp }

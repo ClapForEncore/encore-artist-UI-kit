@@ -103,31 +103,9 @@ struct ShowStatusBar_Previews: PreviewProvider {
                 } barTapped: {
                     print("edit show or something like that")
                 }
-                ZStack {
-                    Image("livingRoom", bundle: .module)
-                        .resizable()
-                        .aspectRatio(9/16, contentMode: .fit)
-                    ToolBar().padding()
-                }
-            }
-            BottomGradient()
-            
-            VStack {
                 Spacer()
-                CarouselView(label:
-                                CreateNewShowTile() { },
-                             content:
-                                HStack {
-                    TileView { Color.red }
-                    TileView { Text("ENCORE STUDIO APP") }
-                }
-                             
-                )
             }
-            
-            
-            
         }
-        .previewInterfaceOrientation(.landscapeLeft)
+        .previewInterfaceOrientation(.portrait)
     }
 }

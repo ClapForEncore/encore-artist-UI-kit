@@ -15,7 +15,7 @@ struct CarouselPreview: PreviewProvider {
             Color.black.ignoresSafeArea()
             VStack {
                 Spacer()
-                CarouselView(label: CreateNewShowTile() { },
+                CarouselView(label: CreateNewTile(label: "Show") { },
                              content:
                                 Group {
                     TileView { Text("ENCORE IS NOT A VERY LONG WORD") }
@@ -25,7 +25,7 @@ struct CarouselPreview: PreviewProvider {
                     TileView { Color.encoreRed }
                     TileView { ToolBar() }
                 })
-                .padding(.leading)
+                
                 .padding(.bottom)
             }.inter(size: 12)
     }
@@ -33,6 +33,7 @@ struct CarouselPreview: PreviewProvider {
     }
 }
 
+///CarouselView takes 2 Views, first the label will stay visible and the content will be instered in a horizontal scrollview
 public struct CarouselView<Label: View, Content: View>: View {
     
     var label: Label
@@ -64,13 +65,15 @@ public struct CarouselView<Label: View, Content: View>: View {
         }
 }
 
-public struct CreateNewShowTile: View {
+
+public struct CreateNewTile: View {
+    @State var label: String
     @State var action: () -> Void
     public var body: some View {
         TileView {
             VStack {
                 Image.plusCircle
-                Text("Create New Show")
+                Text("Create New \(label)")
                     .interSemiBold(size: 14)
             }
         }.frame(width: 92)

@@ -1,10 +1,11 @@
 //
 //  UnityButton.swift
 //
-//  Created by Ubicolor on 05/04/2022.
+//  Created by Romain on 05/04/2022.
 //
 import SwiftUI
 
+///Turns 30% darker when `isPressed`
 public struct Darker: ButtonStyle {
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -15,8 +16,8 @@ public struct Darker: ButtonStyle {
 
 public struct ColorButtonStyle: ButtonStyle {
     
-    var fontColor: Color = .encoreNeon
-    var color: Color = .encoreNeon
+    var fontColor: Color = .encoreDark
+    var color: Color = .white
     var height: ButtonHeight = .medium
     
     public func makeBody(configuration: Configuration) -> some View {
@@ -32,6 +33,7 @@ public struct ColorButtonStyle: ButtonStyle {
         
     }
 }
+
 
 public struct CursorButtonStyle: ButtonStyle {
 
@@ -56,22 +58,28 @@ public struct CursorButtonStyle: ButtonStyle {
     }
 }
 
-struct CursorButtonStyle_Previews: PreviewProvider {
+struct ButtonStyles_Previews: PreviewProvider {
     
     static var previews: some View {
-        VStack {
+        
+        ZStack(alignment: .bottom) {
+            Color.black.ignoresSafeArea()
+            Image("livingRoom", bundle: .module).resizable().aspectRatio(contentMode: .fit)
+            BottomGradient()
             
-            Button {
-                
-            } label: {
-                Text("ENCORE")
-            }
-            .buttonStyle(ColorButtonStyle())
+            VStack {
 
-            
-            Button { } label: {
-                Text("UP")
-            }.buttonStyle(CursorButtonStyle())
+                Button { } label: {
+                    Text("ENCORE")
+                }
+                .buttonStyle(ColorButtonStyle(fontColor: Color.encoreNeon, color: .encoreDark, height: .medium))
+                
+                Button { } label: {
+                    Text("UP")
+                }.buttonStyle(CursorButtonStyle())
+            }.padding()
         }
+        
+        
     }
 }

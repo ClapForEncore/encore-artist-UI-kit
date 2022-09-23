@@ -8,6 +8,7 @@
 import SwiftUI
 
 public enum ButtonHeight: CGFloat {
+    case tiny = 20
     case small = 38
     case medium = 50
     case large = 60
@@ -22,10 +23,7 @@ struct ColorButton_Previews: PreviewProvider {
             Image("livingRoom", bundle: .module).resizable().aspectRatio(contentMode: .fit).ignoresSafeArea()
             BottomGradient()
             VStack(spacing: 8) {
-                
-                
                 Spacer()
-                
                 HStack {
                     ColorButton(icon: Image.plus,
                                 label: "Create New Poll",
@@ -35,11 +33,7 @@ struct ColorButton_Previews: PreviewProvider {
                     ) { }
                     Color.clear
                 }
-                
-                
                 Spacer()
-                
-                
                 ColorButton(icon: Image.calendarPerson, label: "Hello", action: { })
                 HStack(spacing: 8) {
                     ColorButton(icon: Image.plusCircle,
@@ -55,7 +49,6 @@ struct ColorButton_Previews: PreviewProvider {
                                     fontColor: .white,
                                     action: { })
                     }
-                    
                 }
             }.padding(15)
         }
@@ -70,7 +63,6 @@ public struct ColorButton: View {
     @State var fontColor = Color.black
     @State var height = ButtonHeight.medium
     @State var action: () -> Void
-    
     
     public var body: some View {
         
