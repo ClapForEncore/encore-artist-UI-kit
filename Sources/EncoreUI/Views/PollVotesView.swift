@@ -9,12 +9,12 @@ import SwiftUI
 
 public struct PollVotesView: View {
     
-    @State var label: String
+    @State var title: String
     @Binding var timeLeft: Int
     @State var voteOptions: [(label: String, votes: CGFloat)]
 
-    public init(state: String, timeLeft: Binding<Int>, voteOptions: [(label: String, votes: CGFloat)]) {
-        self.label = label
+    public init(title: String, timeLeft: Binding<Int>, voteOptions: [(label: String, votes: CGFloat)]) {
+        self.title = title
         self._timeLeft = timeLeft
         self.voteOptions = voteOptions
     }
@@ -23,7 +23,7 @@ public struct PollVotesView: View {
         TileView {
             VStack {
                 HStack(alignment: .top) {
-                    Text(label)
+                    Text(title)
                         .multilineTextAlignment(.leading)
                         .frame(height: 30)
                     Spacer()
@@ -56,7 +56,7 @@ struct PollVotesView_Previews: PreviewProvider {
             
             VStack {
                 Spacer()
-                PollVotesView(label: "What should I play next?",
+                PollVotesView(title: "What should I play next?",
                               timeLeft: .constant(22),
                               voteOptions: [
                     (label: "Man on the Moon", votes: 2345),
