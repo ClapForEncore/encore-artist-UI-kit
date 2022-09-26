@@ -13,6 +13,12 @@ public struct SegmentedControl: View {
     @State var values: [Int]
     @Binding var selectedValue: Int
     @State private var customValue: Int? = nil
+    
+    public init(values: [Int], selectedValue: Binding<Int>) {
+        self.values = values
+        self._selectedValue = selectedValue
+    }
+    
     public var body: some View {
         HStack(spacing: 0.5) {
             ForEach(values, id: \.self) { value in
