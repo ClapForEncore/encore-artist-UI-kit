@@ -6,9 +6,6 @@
 
 import SwiftUI
 
-
-
-//to be used for a number choice
 public struct SegmentedControl: View {
     @State var values: [Int]
     @Binding var selectedValue: Int

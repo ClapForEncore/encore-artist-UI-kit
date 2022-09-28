@@ -57,12 +57,22 @@ struct ColorButton_Previews: PreviewProvider {
 
 public struct ColorButton: View {
     
-    @State var icon: Image? = nil
+    @State var icon: Image?
     @State var label: String
-    @State var color = Color.white
-    @State var fontColor = Color.black
-    @State var height = ButtonHeight.medium
+    @State var color: Color
+    @State var fontColor: Color
+    @State var height: ButtonHeight
     @State var action: () -> Void
+    
+    public init(icon: Image? = nil, label: String, color: Color = .white, fontColor: Color = .black, height: ButtonHeight = .medium, action: @escaping () -> Void) {
+        self.icon = icon
+        self.label = label
+        self.color = color
+        self.fontColor = fontColor
+        self.height = height
+        self.action = action
+    }
+    
     
     public var body: some View {
         
