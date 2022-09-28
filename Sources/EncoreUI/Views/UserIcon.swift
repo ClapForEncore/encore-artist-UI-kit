@@ -8,7 +8,12 @@
 import SwiftUI
 
 public struct UserIcon: View {
-    @State var image = Image.userCircle
+    @State var image: Image
+    
+    public init(image: Image = Image.userCircle) {
+        self.image = image
+    }
+    
     public var body: some View {
         
         ZStack {

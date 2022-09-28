@@ -73,7 +73,6 @@ public struct ColorButton: View {
         self.action = action
     }
     
-    
     public var body: some View {
         
         Button {
