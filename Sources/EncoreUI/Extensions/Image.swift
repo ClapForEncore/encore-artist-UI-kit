@@ -474,6 +474,7 @@ public extension Image {
     static var pauseCircle: Image { Image("pauseCircle", bundle: .module) }
     static var penTool: Image { Image("penTool", bundle: .module) }
     static var penTool2: Image { Image("penTool2", bundle: .module) }
+    static var personIcon: Image{ Image("personIcon", bundle: .module) }
     static var pharagraphSpacing: Image { Image("pharagraphSpacing", bundle: .module) }
     static var pharagraphSpacingRec: Image { Image("pharagraphSpacingRec", bundle: .module) }
     static var phone: Image { Image("phone", bundle: .module) }
