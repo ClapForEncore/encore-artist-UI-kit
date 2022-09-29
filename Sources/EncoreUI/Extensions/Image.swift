@@ -7,7 +7,8 @@ public extension Image {
     static var encoreLogoECentered: Image { Image("encoreLogoECentered", bundle: .module) }
     static var discordLogo: Image { Image("discordIcon", bundle: .module) }
     static var encoreWordmark: Image { Image("encoreWordmark", bundle: .module) }
-
+    
+    static var clapIcon: Image { Image("clapIcon", bundle: .module) }
     
     //Anron icons
     
