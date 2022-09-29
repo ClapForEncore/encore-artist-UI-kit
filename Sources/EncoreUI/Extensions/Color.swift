@@ -22,8 +22,14 @@ struct EncoreColorsView_Previews: PreviewProvider {
                 Color.encoreKindaDark
                 Color.encoreDark
                 Color.encorePollBlue
+                Color.transparentWhite
+                
             }.ignoresSafeArea()
             
+            
+            Text("BODY COPY  TEXT")
+                .foregroundColor(Color.encoreBodyCopyText
+                ).interBlack(size: 90)
         }
         
     }

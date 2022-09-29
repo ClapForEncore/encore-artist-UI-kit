@@ -6,8 +6,6 @@ struct Preview: PreviewProvider {
         ZStack {
             Color.black.ignoresSafeArea()
             VStack(spacing: 20) {
-                ShowStatusBar(showName: .constant("SHOW MUST GO ON"),
-                              fans: .constant(1234), claps: .constant(12345)) { } barTapped: { }
                 
                 ZStack(alignment: .topLeading) {
                     ZStack(alignment: .top) {
