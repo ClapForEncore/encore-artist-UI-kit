@@ -60,7 +60,7 @@ public struct FullScreenHelpView: View {
         ZStack {
             Color.black.ignoresSafeArea()
             Image("livingRoom", bundle: .module).resizable()
-            BottomGradient()
+            BlackGradient()
             Color.clear.background(.ultraThinMaterial)
                 .colorScheme(.dark)
             if verticalSizeClass == .compact {

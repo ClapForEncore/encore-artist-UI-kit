@@ -51,7 +51,7 @@ struct PollVotesView_Previews: PreviewProvider {
             Color.black.ignoresSafeArea()
             ZStack {
                 Image("livingRoom", bundle: .module)
-                BottomGradient()
+                BlackGradient()
             }
             
             VStack {

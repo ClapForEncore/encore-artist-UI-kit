@@ -21,7 +21,7 @@ struct ColorButton_Previews: PreviewProvider {
         ZStack {
             Color.black.ignoresSafeArea()
             Image("livingRoom", bundle: .module).resizable().aspectRatio(contentMode: .fit).ignoresSafeArea()
-            BottomGradient()
+            BlackGradient()
             VStack(spacing: 8) {
                 Spacer()
                 HStack {

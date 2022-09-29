@@ -65,7 +65,7 @@ struct ButtonStyles_Previews: PreviewProvider {
         ZStack(alignment: .bottom) {
             Color.black.ignoresSafeArea()
             Image("livingRoom", bundle: .module).resizable().aspectRatio(contentMode: .fit)
-            BottomGradient()
+            BlackGradient()
             
             VStack {
 

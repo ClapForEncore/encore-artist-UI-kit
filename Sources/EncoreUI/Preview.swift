@@ -15,7 +15,7 @@ struct Preview: PreviewProvider {
                         Group {
                             encoreLogo
                             signalStrength
-                            BottomGradient()
+                            BlackGradient()
                         }.padding(.top, 20)
                         ToolBar()
                     }
