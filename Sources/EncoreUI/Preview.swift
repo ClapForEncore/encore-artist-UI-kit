@@ -17,7 +17,6 @@ struct Preview: PreviewProvider {
                             signalStrength
                             BlackGradient()
                         }.padding(.top, 20)
-                        ToolBar()
                     }
                 }
             }
@@ -46,16 +45,16 @@ struct Preview: PreviewProvider {
         
         VStack {
             Spacer()
-            CarouselView(label: CreateNewTile(label: "Show") { },
-                         content: Group {
-                TileView { Text("Hello") }
-                TileView { Color.encorePurp }
-                TileView { Image.encoreWordmark }
-                TileView { Image.encoreLogoECentered.resizable().aspectRatio(contentMode: .fit) }
-                TileView { ColorButton(label: "TAP ME", action: { }) }
-            }
-            )
-            
+//            CarouselView(label: CreateNewTile(label: "Show") { },
+//                         content: Group {
+//                TileView { Text("Hello") }
+//                TileView { Color.encorePurp }
+//                TileView { Image.encoreWordmark }
+//                TileView { Image.encoreLogoECentered.resizable().aspectRatio(contentMode: .fit) }
+//                TileView { ColorButton(label: "TAP ME", action: { }) }
+//            }
+//            )
+//
         }.padding(.leading)
     }
 }

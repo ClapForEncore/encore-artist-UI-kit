@@ -1,6 +1,25 @@
 
 import SwiftUI
 
+
+
+
+struct ImageExtension_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        ZStack {
+            Color.black
+            VStack {
+                Image.ar
+                Image.polls
+                Image.slowMoCheck
+                Image.recordTool
+            }.foregroundColor(.white)
+        }
+    }
+}
+
+
 public extension Image {
     static var verifiedIcon: Image { Image("verifiedIcon", bundle: .module) }
     static var enterLobby: Image { Image("enterLobby", bundle: .module) }
@@ -9,7 +28,10 @@ public extension Image {
     static var encoreWordmark: Image { Image("encoreWordmark", bundle: .module) }
     
     static var clapIcon: Image { Image("clapIcon", bundle: .module) }
-    
+    static var polls: Image { Image("polls", bundle: .module) }
+    static var ar: Image { Image("ar", bundle: .module) }
+    static var recordTool: Image { Image("recordTool", bundle: .module) }
+
     //Anron icons
     
     static var activity2: Image { Image("activity2", bundle: .module) }
