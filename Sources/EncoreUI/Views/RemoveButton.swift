@@ -14,24 +14,21 @@ public struct RemoveButton: View {
         Button {
             action()
         } label: {
-
-        ZStack {
-            Color.transparentWhite
-            Capsule().frame(width: 2, height: 11)
-                .rotationEffect(.degrees(45))
-                .foregroundColor(.white)
-            Capsule().frame(width: 2, height: 11)
-                .rotationEffect(.degrees(-45))
-                .foregroundColor(.white)
-        }.frame(width: 27, height: 27)
-            .clipShape(Circle())
+            ZStack {
+                Color.transparentWhite
+                Capsule().frame(width: 2, height: 11)
+                    .rotationEffect(.degrees(45))
+                    .foregroundColor(.white)
+                Capsule().frame(width: 2, height: 11)
+                    .rotationEffect(.degrees(-45))
+                    .foregroundColor(.white)
+            }.frame(width: 27, height: 27)
+                .clipShape(Circle())
         }
-        .buttonStyle(ColorButtonStyle(height: .medium))
-    
     }
 }
 
-struct RemoveButton_Previews: PreviewProvider {
+fileprivate struct RemoveButton_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black
