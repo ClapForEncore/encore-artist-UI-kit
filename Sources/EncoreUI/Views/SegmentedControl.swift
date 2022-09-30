@@ -19,8 +19,7 @@ public struct SegmentedControl: View {
     public var body: some View {
         HStack(spacing: 0.5) {
             ForEach(values, id: \.self) { value in
-                ValueCell(value: value,
-                          isSelected: (value == selectedValue))
+                ValueCell(value: value, selectedValue: $selectedValue)
                     .onTapGesture {
                         selectedValue = value
                     }
@@ -35,13 +34,15 @@ public struct SegmentedControl: View {
     
     struct ValueCell: View {
         @State var value: Int
-        @State var isSelected: Bool
+        @Binding var selectedValue: Int
         var body: some View {
             Text(value.description)
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
-                .foregroundColor(isSelected ? .black : .gray)
-                .background(isSelected ? Color.white : Color.encoreLeastDark)
+                .foregroundColor(
+                    value == selectedValue ? .black : .gray)
+                .background(
+                    value == selectedValue ? Color.white : Color.encoreLeastDark)
                 .inter(size: 14)
                     
         }
@@ -74,6 +75,7 @@ public struct SegmentedControl: View {
 }
 
 struct SegmentedControl_Previews: PreviewProvider {
+     @State static var number = 500
     
     static var previews: some View {
         
@@ -83,28 +85,11 @@ struct SegmentedControl_Previews: PreviewProvider {
             VStack {
                 Spacer()
                 SegmentedControl(values: [500, 1500, 2000],
-                                 selectedValue: .constant(500))
-                TextField("", text: .constant("romain@clapforencore.com"))
-                    .encoreStyle(size: .big, showBackground: false)
-                    .padding()
+                                 selectedValue: $number)
+                Spacer()
             }
             
         }
     }
 }
 
-class PreviewModel: ObservableObject {
-    @Published var number = "500"
-}
-
-//struct MockBackground: View {
-//    var body: some View {
-//        ZStack {
-//            Color.black.ignoresSafeArea()
-//            Image("livingRoom", bundle: .module)
-//                .resizable()
-//                .aspectRatio(contentMode: .fill)
-//            BottomGradient()
-//        }
-//    }
-//}
