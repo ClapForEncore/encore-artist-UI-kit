@@ -12,7 +12,7 @@ public struct CloseButton: View {
     
     @State var close: () -> Void
     
-    public init(close: @escaping () -> Void) {
+    public init(_ close: @escaping () -> Void) {
         self.close = close
     }
     

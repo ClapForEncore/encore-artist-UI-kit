@@ -8,10 +8,13 @@
 import SwiftUI
 
 public struct RemoveButton: View {
-    
+
     @State var action: () -> Void
     
-    public init() {}
+    public init(_ action: @escaping () -> Void) {
+        self.action = action
+    }
+    
     public var body: some View {
         Button {
             action()
@@ -35,7 +38,6 @@ fileprivate struct RemoveButton_Previews: PreviewProvider {
         ZStack {
             Color.black
             RemoveButton { }
-            
         }
     }
 }

@@ -28,7 +28,7 @@ struct Preview: PreviewProvider {
     static var signalStrength: some View {
         ZStack(alignment: .topLeading) {
             Color.clear
-            SignalStrengthView(bars: .constant(3))
+            SignalStrengthView(.constant(3))
                 .padding(.leading, 27)
         }
     }

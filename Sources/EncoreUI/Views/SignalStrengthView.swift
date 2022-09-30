@@ -7,11 +7,15 @@
 
 import SwiftUI
 
-struct SignalStrengthView: View {
-
+public struct SignalStrengthView: View {
+    
     @Binding var bars: Int
     
-    var body: some View {
+    public init(_ bars: Binding<Int>) {
+        self._bars = bars
+    }
+    
+   public var body: some View {
         
         HStack(alignment: .bottom, spacing: 2) {
             Capsule().frame(width: 2, height: 3)
@@ -34,7 +38,7 @@ struct SignalStrengthView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black
-            SignalStrengthView(bars: .constant(3))
+            SignalStrengthView(.constant(3))
         }
     }
 }
