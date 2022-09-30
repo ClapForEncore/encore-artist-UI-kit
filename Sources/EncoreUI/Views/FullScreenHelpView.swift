@@ -10,9 +10,8 @@ import SwiftUI
 
 struct FullScreenHelpView_Previews: PreviewProvider {
     static var previews: some View {
-        FullScreenHelpView(type: .badSignal, action: { }, close: { })
         FullScreenHelpView(type: .goLive, action: { }, close: { })
-        FullScreenHelpView(type: .getPaid, action: { }, close: { })
+        
     }
 }
 
@@ -54,6 +53,8 @@ public struct FullScreenHelpView: View {
     
     @State var action: () -> Void
     @State var close: () -> Void
+    
+
     
     public var body: some View {
         

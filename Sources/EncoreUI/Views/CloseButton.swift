@@ -12,6 +12,10 @@ public struct CloseButton: View {
     
     @State var close: () -> Void
     
+    public init(close: @escaping () -> Void) {
+        self.close = close
+    }
+    
     public var body: some View {
         
         VStack {

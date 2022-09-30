@@ -10,6 +10,8 @@ import SwiftUI
 public struct RemoveButton: View {
     
     @State var action: () -> Void
+    
+    public init() {}
     public var body: some View {
         Button {
             action()
