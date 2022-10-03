@@ -1,7 +1,7 @@
 import SwiftUI
 
 
-public struct EncoreUI {
+public struct EncorePackage {
 
      public static func registerFonts() {
          for font in Font.encoreFonts {
