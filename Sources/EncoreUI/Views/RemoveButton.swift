@@ -7,14 +7,37 @@
 
 import SwiftUI
 
-struct RemoveButton: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+public struct RemoveButton: View {
+
+    @State var action: () -> Void
+    
+    public init(_ action: @escaping () -> Void) {
+        self.action = action
+    }
+    
+    public var body: some View {
+        Button {
+            action()
+        } label: {
+            ZStack {
+                Color.transparentWhite
+                Capsule().frame(width: 2, height: 11)
+                    .rotationEffect(.degrees(45))
+                    .foregroundColor(.white)
+                Capsule().frame(width: 2, height: 11)
+                    .rotationEffect(.degrees(-45))
+                    .foregroundColor(.white)
+            }.frame(width: 27, height: 27)
+                .clipShape(Circle())
+        }
     }
 }
 
-struct RemoveButton_Previews: PreviewProvider {
+fileprivate struct RemoveButton_Previews: PreviewProvider {
     static var previews: some View {
-        RemoveButton()
+        ZStack {
+            Color.black
+            RemoveButton { }
+        }
     }
 }

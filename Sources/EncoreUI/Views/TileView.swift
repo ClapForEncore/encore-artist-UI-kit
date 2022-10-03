@@ -1,19 +1,18 @@
 //
 //  SwiftUIView.swift
-//  
-//
 //  Created by Romain on 20/09/2022.
 //
 
 import SwiftUI
 
-struct TileView<Content: View>: View {
+public struct TileView<Content: View>: View {
     let content: Content
-    init(@ViewBuilder content: @escaping () -> Content) {
+    
+    public init(@ViewBuilder content: @escaping () -> Content) {
         self.content = content()
     }
     
-    var body: some View {
+    public var body: some View {
         ZStack {
             Color.transparentWhite
             content
@@ -33,24 +32,24 @@ struct TileView_Previews: PreviewProvider {
             Color.encoreDark
             ScrollView(.horizontal) {
                 HStack {
-                    //TileView {
-                    Image.infinity
-                    //}
-//                    TileView {
-                        Image.encoreWordmark
-//                    }
-//                    TileView {
-//                        Image.encoreLogoECentered.resizable().aspectRatio(contentMode: .fit)
-//                    }
                     TileView {
-//                        ZStack {
-//                            Color.encoreDark.cornerRadius(4)
+                    Image.infinity
+                    }
+                    TileView {
+                        Image.encoreWordmark
+                    }
+                    TileView {
+                        Image.encoreLogoECentered.resizable().aspectRatio(contentMode: .fit)
+                    }
+                    TileView {
+                        ZStack {
+                            Color.encoreDark.cornerRadius(4)
                             Text("TileView")
-//                                .padding()
+                                .padding()
                                 .foregroundColor(.encoreNeon)
                         }
-//
-//                    }
+
+                    }
                 }.frame(height: 128)
             }
         }

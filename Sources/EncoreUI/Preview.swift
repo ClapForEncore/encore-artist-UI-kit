@@ -6,8 +6,6 @@ struct Preview: PreviewProvider {
         ZStack {
             Color.black.ignoresSafeArea()
             VStack(spacing: 20) {
-                ShowStatusBar(showName: .constant("SHOW MUST GO ON"),
-                              fans: .constant(1234), claps: .constant(12345)) { } barTapped: { }
                 
                 ZStack(alignment: .topLeading) {
                     ZStack(alignment: .top) {
@@ -17,23 +15,20 @@ struct Preview: PreviewProvider {
                         Group {
                             encoreLogo
                             signalStrength
-                            BottomGradient()
+                            BlackGradient()
                         }.padding(.top, 20)
-                        ToolBar()
                     }
                 }
             }
             bottomMenu
-            
-        }.onAppear {
-            EncoreUI.registerFonts()
-        }.previewInterfaceOrientation(.portrait)
+        }
+        .previewInterfaceOrientation(.portrait)
     }
     
     static var signalStrength: some View {
         ZStack(alignment: .topLeading) {
             Color.clear
-            SignalStrengthView(bars: .constant(3))
+            SignalStrengthView(.constant(3))
                 .padding(.leading, 27)
         }
     }
@@ -50,16 +45,16 @@ struct Preview: PreviewProvider {
         
         VStack {
             Spacer()
-            CarouselView(label: CreateNewShowTile() { },
-                         content: Group {
-                TileView { Text("Hello") }
-                TileView { Color.encorePurp }
-                TileView { Image.encoreWordmark }
-                TileView { Image.encoreLogoECentered.resizable().aspectRatio(contentMode: .fit) }
-                TileView { ColorButton(label: "TAP ME", action: { }) }
-            }
-            )
-            
+//            CarouselView(label: CreateNewTile(label: "Show") { },
+//                         content: Group {
+//                TileView { Text("Hello") }
+//                TileView { Color.encorePurp }
+//                TileView { Image.encoreWordmark }
+//                TileView { Image.encoreLogoECentered.resizable().aspectRatio(contentMode: .fit) }
+//                TileView { ColorButton(label: "TAP ME", action: { }) }
+//            }
+//            )
+//
         }.padding(.leading)
     }
 }

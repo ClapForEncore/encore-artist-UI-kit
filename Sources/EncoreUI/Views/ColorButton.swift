@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-enum ButtonHeight: CGFloat {
+public enum ButtonHeight: CGFloat {
+    case tiny = 20
     case small = 38
     case medium = 50
     case large = 60
@@ -20,12 +21,9 @@ struct ColorButton_Previews: PreviewProvider {
         ZStack {
             Color.black.ignoresSafeArea()
             Image("livingRoom", bundle: .module).resizable().aspectRatio(contentMode: .fit).ignoresSafeArea()
-            BottomGradient()
+            BlackGradient()
             VStack(spacing: 8) {
-                
-                
                 Spacer()
-                
                 HStack {
                     ColorButton(icon: Image.plus,
                                 label: "Create New Poll",
@@ -35,11 +33,7 @@ struct ColorButton_Previews: PreviewProvider {
                     ) { }
                     Color.clear
                 }
-                
-                
                 Spacer()
-                
-                
                 ColorButton(icon: Image.calendarPerson, label: "Hello", action: { })
                 HStack(spacing: 8) {
                     ColorButton(icon: Image.plusCircle,
@@ -55,24 +49,31 @@ struct ColorButton_Previews: PreviewProvider {
                                     fontColor: .white,
                                     action: { })
                     }
-                    
                 }
             }.padding(15)
         }
     }
 }
 
-struct ColorButton: View {
+public struct ColorButton: View {
     
-    @State var icon: Image? = nil
+    @State var icon: Image?
     @State var label: String
-    @State var color = Color.white
-    @State var fontColor = Color.black
-    @State var height = ButtonHeight.medium
+    @State var color: Color
+    @State var fontColor: Color
+    @State var height: ButtonHeight
     @State var action: () -> Void
     
+    public init(icon: Image? = nil, label: String, color: Color = .white, fontColor: Color = .black, height: ButtonHeight = .medium, action: @escaping () -> Void) {
+        self.icon = icon
+        self.label = label
+        self.color = color
+        self.fontColor = fontColor
+        self.height = height
+        self.action = action
+    }
     
-    var body: some View {
+    public var body: some View {
         
         Button {
             action()
@@ -101,22 +102,4 @@ struct ColorButton: View {
     }
 }
 
-struct ColorButtonStyle: ButtonStyle {
-    
-    var fontColor: Color = .encoreNeon
-    var color: Color = .encoreNeon
-    var height: ButtonHeight
-    
-    func makeBody(configuration: Configuration) -> some View {
-        
-        ZStack {
-            color.frame(height: height.rawValue)
-            configuration.label
-                .font(.system(size: 12, weight: .regular, design: .default))
-                .foregroundColor(fontColor)
-        }
-        .cornerRadius(9)
-        .overlay(Color.black.opacity(configuration.isPressed ? 0.3 : 0))
-        
-    }
-}
+

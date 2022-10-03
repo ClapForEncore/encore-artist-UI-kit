@@ -7,18 +7,19 @@
 
 import SwiftUI
 
-struct BottomGradient: View {
-    var body: some View {
+///Transparent top to full black bottom
+public struct BlackGradient: View {
+    public init() { }
+    public var body: some View {
         VStack {
             Spacer()
             LinearGradient(colors: [Color.black.opacity(0), .black], startPoint: .top, endPoint: .bottom)
-                .frame(height: 362)
         }
     }
 }
 
-struct BottomGradient_Previews: PreviewProvider {
+fileprivate struct BottomGradient_Previews: PreviewProvider {
     static var previews: some View {
-        BottomGradient()
+        BlackGradient()
     }
 }

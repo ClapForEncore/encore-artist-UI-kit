@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-extension View {
+public extension View {
+    func anton(size: CGFloat) ->            some View { self.font(.anton(size: size)) }
     func inter(size: CGFloat) ->            some View { self.font(.inter(size: size)) }
     func interBold(size: CGFloat) ->        some View { self.font(.interBold(size: size)) }
     func interSemiBold(size: CGFloat) ->    some View { self.font(.interSemiBold(size: size)) }
@@ -17,4 +18,19 @@ extension View {
     func interThin(size: CGFloat) ->        some View { self.font(.interThin(size: size)) }
     func interExtraLight(size: CGFloat) ->  some View { self.font(.interExtraLight(size: size)) }
     func interBlack(size: CGFloat) ->       some View { self.font(.interBlack(size: size)) }
+    
+    func width(_ width: CGFloat) -> some View { self.frame(width: width) }
+    func height(_ height: CGFloat) -> some View { self.frame(height: height) }
+
+    func `if`<T: View>(_ conditional: Bool, transform: (Self) -> T) -> some View {
+        Group {
+            if conditional {
+                transform(self)
+            } else {
+                self
+            }
+        }
+    }
 }
+
+

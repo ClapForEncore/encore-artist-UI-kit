@@ -1,14 +1,40 @@
 
 import SwiftUI
 
-extension Image {
+
+
+
+struct ImageExtension_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        ZStack {
+            Color.black
+            VStack {
+                Image.ar
+                Image.polls
+                Image.slowMoCheck
+                Image.recordTool
+            }.foregroundColor(.white)
+        }
+    }
+}
+
+
+public extension Image {
     static var verifiedIcon: Image { Image("verifiedIcon", bundle: .module) }
     static var enterLobby: Image { Image("enterLobby", bundle: .module) }
     static var encoreLogoECentered: Image { Image("encoreLogoECentered", bundle: .module) }
     static var discordLogo: Image { Image("discordIcon", bundle: .module) }
     static var encoreWordmark: Image { Image("encoreWordmark", bundle: .module) }
-
     
+    static var clapIcon: Image { Image("clapIcon", bundle: .module) }
+    static var polls: Image { Image("polls", bundle: .module) }
+    static var ar: Image { Image("ar", bundle: .module) }
+    static var recordTool: Image { Image("recordTool", bundle: .module) }
+    static var startCircleDash: Image { Image("startCircleDash", bundle: .module) }
+    static var stopCircleDash: Image { Image("stopCircleDash", bundle: .module) }
+
+
     //Anron icons
     
     static var activity2: Image { Image("activity2", bundle: .module) }
@@ -474,6 +500,7 @@ extension Image {
     static var pauseCircle: Image { Image("pauseCircle", bundle: .module) }
     static var penTool: Image { Image("penTool", bundle: .module) }
     static var penTool2: Image { Image("penTool2", bundle: .module) }
+    static var personIcon: Image{ Image("personIcon", bundle: .module) }
     static var pharagraphSpacing: Image { Image("pharagraphSpacing", bundle: .module) }
     static var pharagraphSpacingRec: Image { Image("pharagraphSpacingRec", bundle: .module) }
     static var phone: Image { Image("phone", bundle: .module) }
