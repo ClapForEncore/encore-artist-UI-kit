@@ -37,9 +37,9 @@ extension Font {
         return Font.custom("Inter-Black", fixedSize: size)
     }
     
-    public static var allInterFonts: [String] {
-        let fonts = ["Inter-Regular", "Inter-Bold", "Inter-SemiBold","Inter-ExtraBold","Inter-Light", "Inter-Medium", "Inter-Thin", "Inter-ExtraLight", "Inter-Black"]
-        return fonts
-    }
+    public static var encoreFonts: [String] {
+        let fonts = ["Anton", "Inter-Regular", "Inter-Bold", "Inter-SemiBold","Inter-ExtraBold","Inter-Light", "Inter-Medium", "Inter-Thin", "Inter-ExtraLight", "Inter-Black"]
+             return fonts
+         }
     
 }
