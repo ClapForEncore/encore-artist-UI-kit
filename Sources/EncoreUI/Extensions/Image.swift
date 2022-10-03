@@ -31,6 +31,9 @@ public extension Image {
     static var polls: Image { Image("polls", bundle: .module) }
     static var ar: Image { Image("ar", bundle: .module) }
     static var recordTool: Image { Image("recordTool", bundle: .module) }
+    static var startCircleDash: Image { Image("startCircleDash", bundle: .module) }
+    static var stopCircleDash: Image { Image("stopCircleDash", bundle: .module) }
+
 
     //Anron icons
     
