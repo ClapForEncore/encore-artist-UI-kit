@@ -1,7 +1,7 @@
 import SwiftUI
 
 
-extension Font {
+public extension Font {
 
      public static func registerFonts() {
          for font in Font.encoreFonts {
