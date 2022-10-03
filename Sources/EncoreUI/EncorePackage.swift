@@ -3,7 +3,10 @@ import SwiftUI
 
 public extension Font {
 
-     public static func registerFonts() {
+    ///Needs to be called at app launch:
+    ///`.onAppear { Font.registerFonts }`
+    ///The font files are included in the Swift packages and need to be delared int he app's info.plist.
+    static func registerFonts() {
          for font in Font.encoreFonts {
             registerFont(bundle: .module, fontName: font, fontExtension: "ttf")
         }
