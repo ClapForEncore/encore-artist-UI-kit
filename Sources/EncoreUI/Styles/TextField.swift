@@ -10,7 +10,7 @@ import SwiftUI
 public enum TextFieldSize: CGFloat {
     case small = 10
     case medium = 14
-    case big = 16
+    case large = 16
 }
 
 public extension TextField {
@@ -34,7 +34,7 @@ struct EncoreTextFieldStyle_Previews: PreviewProvider {
             VStack {
                 Spacer()
                 TextField("type in a username", text: .constant("ENCORE"))
-                    .encoreStyle(size: .big, showBackground: false)
+                    .encoreStyle(size: .large, showBackground: false)
                 TextField("type in a username", text: .constant("ENCORE"))
                     .encoreStyle(size: .medium, showBackground: false)
                 TextField("type in a username", text: .constant("ENCORE"))

@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct EncoreColorsView_Previews: PreviewProvider {
         
     static var previews: some View {
@@ -26,85 +25,32 @@ struct EncoreColorsView_Previews: PreviewProvider {
                 
             }.ignoresSafeArea()
             
-            
             Text("BODY COPY  TEXT")
                 .foregroundColor(Color.encoreBodyCopyText
                 ).interBlack(size: 90)
         }
-        
     }
 }
 
 public extension Color {
-        
+            
+    static var encoreBodyCopyText =         Color(.encoreBodyCopyText)
+    static var encoreNeon =                 Color(.encoreNeon)
+    static var encorePurp =                 Color(.encorePurp)
+    static var encoreGreen =                Color(.encoreGreen)
+    static var encoreYellow =               Color(.encoreYellow)
+    static var encoreRed =                  Color(.encoreRed)
+    static var encoreAqua =                 Color(.encoreAqua)
     
-    static var transparentWhite: Color {
-        Color.white.opacity(0.15)
-    }
+    static var encoreDark =                 Color(.encoreDark)
+    static var encoreKindaDark =            Color(.encoreKindaDark)
+    static var encoreLeastDark =            Color(.encoreLeastDark)
+
+    static var encorePollBlue =             Color(.encorePollBlue)
+    static var encoreInactiveTextFields =   Color(.encoreInactiveTextFields)
+    static var lightGray =                  Color(.lightGray)
+    static var transparentWhite =           Color(.transparentWhite)
     
-    static var lightGray: Color {
-        Color(white: 0.1)
-    }
-    
-    static var encoreBodyCopyText: Color {
-        let uiColor = #colorLiteral(red: 0.8823529412, green: 0.8823529412, blue: 0.8823529412, alpha: 1)
-        return Color(uiColor)
-    }
-    
-    static var encoreNeon: Color {
-        let uiColor = #colorLiteral(red: 0.768627451, green: 1, blue: 0, alpha: 1)
-        return Color(uiColor)
-    }
-    
-    static var encorePurp: Color {
-        let uiColor = #colorLiteral(red: 0.3019607843, green: 0.07058823529, blue: 0.9019607843, alpha: 1)
-        return Color(uiColor)
-    }
-    
-    static var encoreGreen: Color {
-        let uiColor = #colorLiteral(red: 0.3725490196, green: 0.8588235294, blue: 0.3921568627, alpha: 1)
-        return Color(uiColor)
-    }
-    
-    static var encoreYellow: Color {
-        let uiColor = #colorLiteral(red: 1, green: 0.9176470588, blue: 0.1803921569, alpha: 1)
-        return Color(uiColor)
-    }
-    
-    static var encoreRed: Color {
-        let uiColor = #colorLiteral(red: 1, green: 0.2784313725, blue: 0.2784313725, alpha: 1)
-        return Color(uiColor)
-    }
-    
-    static var encoreAqua: Color {
-        let uiColor = #colorLiteral(red: 0.0862745098, green: 0.8588235294, blue: 0.7647058824, alpha: 1)
-        return Color(uiColor)
-    }
-    
-    static var encoreDark: Color {
-        let uiColor = #colorLiteral(red: 0.05490196078, green: 0.05490196078, blue: 0.05490196078, alpha: 1)
-        return Color(uiColor)
-    }
-    
-    static var encorePollBlue: Color {
-        let uiColor = #colorLiteral(red: 0, green: 0.3411764706, blue: 1, alpha: 1)
-        return Color(uiColor)
-    }
-    
-    static var encoreLeastDark: Color {
-        let uiColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
-        return Color(uiColor)
-    }
-    
-    static var encoreInactiveTextFields: Color {
-        let uiColor = #colorLiteral(red: 0.3568627451, green: 0.3568627451, blue: 0.3568627451, alpha: 1)
-        return Color(uiColor)
-    }
-    
-    static var encoreKindaDark: Color {
-        let uiColor = #colorLiteral(red: 0.09019607843, green: 0.09019607843, blue: 0.09019607843, alpha: 1)
-        return Color(uiColor)
-    }
     
     init(hex: UInt, alpha: Double = 1) {
         self.init(
