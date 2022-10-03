@@ -8,6 +8,7 @@
 import SwiftUI
 
 public extension View {
+    func anton(size: CGFloat) ->            some View { self.font(.anton(size: size)) }
     func inter(size: CGFloat) ->            some View { self.font(.inter(size: size)) }
     func interBold(size: CGFloat) ->        some View { self.font(.interBold(size: size)) }
     func interSemiBold(size: CGFloat) ->    some View { self.font(.interSemiBold(size: size)) }

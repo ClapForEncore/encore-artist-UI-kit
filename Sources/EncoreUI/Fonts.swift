@@ -4,6 +4,10 @@
 import SwiftUI
 
 extension Font {
+    
+    public static func anton(size: CGFloat) -> Font {
+        return Font.custom("Anton", fixedSize: size)
+    }
 
     public static func inter(size: CGFloat) -> Font {
         return Font.custom("Inter-Regular", fixedSize: size)
@@ -37,4 +41,5 @@ extension Font {
         let fonts = ["Inter-Regular", "Inter-Bold", "Inter-SemiBold","Inter-ExtraBold","Inter-Light", "Inter-Medium", "Inter-Thin", "Inter-ExtraLight", "Inter-Black"]
         return fonts
     }
+    
 }
