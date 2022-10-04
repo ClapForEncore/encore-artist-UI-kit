@@ -41,17 +41,16 @@ public extension Color {
     static var encoreYellow =               Color(.encoreYellow)
     static var encoreRed =                  Color(.encoreRed)
     static var encoreAqua =                 Color(.encoreAqua)
-    
     static var encoreDark =                 Color(.encoreDark)
     static var encoreKindaDark =            Color(.encoreKindaDark)
     static var encoreLeastDark =            Color(.encoreLeastDark)
-
     static var encorePollBlue =             Color(.encorePollBlue)
     static var encoreInactiveTextFields =   Color(.encoreInactiveTextFields)
     static var lightGray =                  Color(.lightGray)
     static var transparentWhite =           Color(.transparentWhite)
-    
-    
+    static var encoreDarkGray =             Color(.encoreDarkGray)
+    static var offWhite =                   Color(.offWhite)
+        
     init(hex: UInt, alpha: Double = 1) {
         self.init(
             .sRGB,
