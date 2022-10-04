@@ -3,43 +3,59 @@
 
 import SwiftUI
 
-extension Font {
+public extension Font {
+    ///Needs to be called at app launch:
+    ///`.onAppear { Font.register() }`
+    ///The font files are included in the Swift packages and need to be delared int he app's info.plist.
+    static func register() {
+         for font in Font.encoreFonts {
+            registerFont(bundle: .module, fontName: font, fontExtension: "ttf")
+        }
+     }
+
+    fileprivate static func registerFont(bundle: Bundle, fontName: String, fontExtension: String) {
+
+        guard let fontURL = bundle.url(forResource: fontName, withExtension: fontExtension),
+              let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
+              let font = CGFont(fontDataProvider) else {
+                  fatalError("Couldn't create font from data")
+        }
+        var error: Unmanaged<CFError>?
+        CTFontManagerRegisterGraphicsFont(font, &error)
+    }
+     
     
-    public static func anton(size: CGFloat) -> Font {
+    static func anton(size: CGFloat) -> Font {
         return Font.custom("Anton", fixedSize: size)
     }
 
-    public static func inter(size: CGFloat) -> Font {
+    static func inter(size: CGFloat) -> Font {
         return Font.custom("Inter-Regular", fixedSize: size)
     }
-    public static func interBold(size: CGFloat) -> Font {
+    static func interBold(size: CGFloat) -> Font {
         return Font.custom("Inter-Bold", fixedSize: size)
     }
-    public static func interSemiBold(size: CGFloat) -> Font {
+    static func interSemiBold(size: CGFloat) -> Font {
         return Font.custom("Inter-SemiBold", fixedSize: size)
     }
-    public static func interExtraBold(size: CGFloat) -> Font {
+    static func interExtraBold(size: CGFloat) -> Font {
         return Font.custom("Inter-ExtraBold", fixedSize: size)
     }
-    public static func interLight(size: CGFloat) -> Font {
+    static func interLight(size: CGFloat) -> Font {
         return Font.custom("Inter-Light", fixedSize: size)
     }
-    public static func interMedium(size: CGFloat) -> Font {
+    static func interMedium(size: CGFloat) -> Font {
         return Font.custom("Inter-Medium", fixedSize: size)
     }
-    public static func interThin(size: CGFloat) -> Font {
+    static func interThin(size: CGFloat) -> Font {
         return Font.custom("Inter-Thin", fixedSize: size)
     }
-    public static func interExtraLight(size: CGFloat) -> Font {
+    static func interExtraLight(size: CGFloat) -> Font {
         return Font.custom("Inter-ExtraLight", fixedSize: size)
     }
-    public static func interBlack(size: CGFloat) -> Font {
+    static func interBlack(size: CGFloat) -> Font {
         return Font.custom("Inter-Black", fixedSize: size)
     }
     
-    public static var encoreFonts: [String] {
-        let fonts = ["Anton", "Inter-Regular", "Inter-Bold", "Inter-SemiBold","Inter-ExtraBold","Inter-Light", "Inter-Medium", "Inter-Thin", "Inter-ExtraLight", "Inter-Black"]
-             return fonts
-         }
-    
+    static let encoreFonts = ["Anton", "Inter-Regular", "Inter-Bold", "Inter-SemiBold","Inter-ExtraBold","Inter-Light", "Inter-Medium", "Inter-Thin", "Inter-ExtraLight", "Inter-Black"]
 }

@@ -1,28 +1,7 @@
 import SwiftUI
 
 
-public extension Font {
 
-    ///Needs to be called at app launch:
-    ///`.onAppear { Font.registerFonts }`
-    ///The font files are included in the Swift packages and need to be delared int he app's info.plist.
-    static func registerFonts() {
-         for font in Font.encoreFonts {
-            registerFont(bundle: .module, fontName: font, fontExtension: "ttf")
-        }
-     }
-
-    fileprivate static func registerFont(bundle: Bundle, fontName: String, fontExtension: String) {
-
-        guard let fontURL = bundle.url(forResource: fontName, withExtension: fontExtension),
-              let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
-              let font = CGFont(fontDataProvider) else {
-                  fatalError("Couldn't create font from data")
-        }
-        var error: Unmanaged<CFError>?
-        CTFontManagerRegisterGraphicsFont(font, &error)
-    }
- }
 
 
 struct Preview: PreviewProvider {
