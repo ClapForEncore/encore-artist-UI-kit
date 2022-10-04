@@ -2,8 +2,6 @@
 import SwiftUI
 
 
-
-
 struct ImageExtension_Previews: PreviewProvider {
     
     static var previews: some View {
@@ -13,14 +11,18 @@ struct ImageExtension_Previews: PreviewProvider {
                 Image.ar
                 Image.polls
                 Image.slowMoCheck
-                Image.recordTool
+                Image.startCircleDash
+                Image.stopCircleDash
+                ChatIcon(notificationOn: .constant(true))
             }.foregroundColor(.white)
         }
     }
 }
 
-
 public extension Image {
+    
+    
+    
     static var verifiedIcon: Image { Image("verifiedIcon", bundle: .module) }
     static var enterLobby: Image { Image("enterLobby", bundle: .module) }
     static var encoreLogoECentered: Image { Image("encoreLogoECentered", bundle: .module) }
@@ -33,7 +35,7 @@ public extension Image {
     static var recordTool: Image { Image("recordTool", bundle: .module) }
     static var startCircleDash: Image { Image("startCircleDash", bundle: .module) }
     static var stopCircleDash: Image { Image("stopCircleDash", bundle: .module) }
-
+    static var chat: Image { Image("chat", bundle: .module) }
 
     //Anron icons
     

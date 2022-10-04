@@ -25,7 +25,7 @@ struct EncoreColorsView_Previews: PreviewProvider {
                 
             }.ignoresSafeArea()
             
-            Text("BODY COPY  TEXT")
+            Text("BODY COPY TEXT")
                 .foregroundColor(Color.encoreBodyCopyText
                 ).interBlack(size: 90)
         }
