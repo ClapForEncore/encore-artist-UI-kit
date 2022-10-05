@@ -36,6 +36,7 @@ public extension Image {
     static var startCircleDash: Image { Image("startCircleDash", bundle: .module) }
     static var stopCircleDash: Image { Image("stopCircleDash", bundle: .module) }
     static var chat: Image { Image("chat", bundle: .module) }
+    
 
     //Anron icons
     
