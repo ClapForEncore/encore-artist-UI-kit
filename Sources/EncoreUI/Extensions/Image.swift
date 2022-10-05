@@ -9,7 +9,6 @@ struct ImageExtension_Previews: PreviewProvider {
             Color.black
             VStack {
                 Image.ar
-                Image.polls
                 Image.slowMoCheck
                 Image.startCircleDash
                 Image.stopCircleDash
@@ -554,7 +553,7 @@ public extension Image {
     static var refreshCwAlert: Image { Image("refreshCwAlert", bundle: .module) }
     static var refreshCwAlertRec: Image { Image("refreshCwAlertRec", bundle: .module) }
     static var refreshCwRec: Image { Image("refreshCwRec", bundle: .module) }
-    //static var repeat: Image { Image("repeat", bundle: .module) }
+    static var flip: Image { Image("repeat", bundle: .module) }
     static var repeatOn: Image { Image("repeatOn", bundle: .module) }
     static var replay: Image { Image("replay", bundle: .module) }
     static var replay10: Image { Image("replay10", bundle: .module) }

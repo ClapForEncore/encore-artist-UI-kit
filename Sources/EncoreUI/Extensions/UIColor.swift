@@ -24,5 +24,5 @@ public extension UIColor {
     static var encoreDarkGray: UIColor {            #colorLiteral(red: 0.3215686275, green: 0.3215686275, blue: 0.3215686275, alpha: 1) }
     static var offWhite: UIColor {                  #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 1) }
     static var transparentWhite: UIColor {          UIColor(white: 1, alpha: 0.15) }
-    static var lightGray: UIColor {                 UIColor(white: 0.1, alpha: 1) }
+    static var lightGray: UIColor {                 UIColor(white: 0.9, alpha: 1) }
 }
