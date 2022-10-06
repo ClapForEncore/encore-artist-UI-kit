@@ -11,7 +11,6 @@ import SwiftUI
 struct FullScreenHelpView_Previews: PreviewProvider {
     static var previews: some View {
         FullScreenHelpView(type: .goLive, action: { }, close: { })
-        
     }
 }
 
@@ -19,7 +18,7 @@ struct FullScreenHelpView_Previews: PreviewProvider {
 public enum HelpPageType: String {
     case earnings, showTime, getPaid, goLive, badSignal
     
-    var image: Image {
+    public var image: Image {
         switch self {
         case .earnings: return Image("moneyEmoji", bundle: .module)
         case .showTime: return Image("rocket", bundle: .module)
@@ -28,7 +27,7 @@ public enum HelpPageType: String {
         case .badSignal: return Image("badSignal", bundle: .module)
         }
     }
-    var title: String {
+    public var title: String {
         switch self {
         case .earnings: return "Lifetime Earnings"
         case .showTime: return "Ready for Showtime"
@@ -39,7 +38,7 @@ public enum HelpPageType: String {
     }
     
     
-    var explaination : String {
+    public var explaination : String {
     //TODO: switch self { ... }
     return  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. \n\n Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo."
     }
@@ -47,14 +46,18 @@ public enum HelpPageType: String {
 
 public struct FullScreenHelpView: View {
     
-    @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
-    
-    @State var type: HelpPageType = .showTime
-    
+    @State var type: HelpPageType
     @State var action: () -> Void
     @State var close: () -> Void
     
-
+    public init(type: HelpPageType = .showTime,
+                action: @escaping () -> Void,
+                close: @escaping () -> Void) {
+        self.type = type
+        self.action = action
+        self.close = close
+    }
+    
     
     public var body: some View {
         
@@ -64,16 +67,9 @@ public struct FullScreenHelpView: View {
             BlackGradient()
             Color.clear.background(.ultraThinMaterial)
                 .colorScheme(.dark)
-            if verticalSizeClass == .compact {
-                HStack {
-                    type.image
-                    textView
-                }
-            } else {
-                VStack {
-                    type.image
-                    textView
-                }
+            VStack {
+                type.image
+                textView
             }
             CloseButton { close() }
         }
