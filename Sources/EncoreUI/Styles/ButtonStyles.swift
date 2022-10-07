@@ -19,13 +19,17 @@ public struct ColorButtonStyle: ButtonStyle {
     var fontColor: Color = .encoreDark
     var color: Color = .white
     var height: ButtonHeight = .medium
-    
+    public init(fontColor: Color, color: Color, height: ButtonHeight) {
+        self.fontColor = fontColor
+        self.color = color
+        self.height = height
+    }
     public func makeBody(configuration: Configuration) -> some View {
         
         ZStack {
             color.frame(height: height.rawValue)
             configuration.label
-                .font(.system(size: 12, weight: .regular, design: .default))
+                .inter(size: 12)
                 .foregroundColor(fontColor)
         }
         .cornerRadius(9)
