@@ -90,12 +90,10 @@ public struct ColorButton: View {
                 HStack {
                     icon?.resizable().frame(width: 14, height: 14)
                     Text(label)
-                        .kerning(1)
                         .inter(size: 12)
                         .multilineTextAlignment(.center)
                 }
             }
-            
         }
         .buttonStyle(ColorButtonStyle(fontColor: fontColor, color: color, height: height))
         
