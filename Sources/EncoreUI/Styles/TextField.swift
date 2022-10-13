@@ -24,7 +24,7 @@ public extension TextField {
                 Text(placeHolder).inter(size: size.rawValue)
                     .foregroundColor(.white)
                 Spacer()
-            }
+            }.padding(.horizontal, 15)
             
             self.inter(size: size.rawValue)
                 .foregroundColor(.white)
