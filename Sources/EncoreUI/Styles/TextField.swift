@@ -20,7 +20,7 @@ public extension TextField {
         
         self.inter(size: size.rawValue)
             .foregroundColor(.white)
-            .multilineTextAlignment(.center)
+            .multilineTextAlignment(alignment)
             .frame(height: 36)
             .background(Color.white.opacity(showBackground ? 0.1 : 0))
             .cornerRadius(5)
