@@ -14,7 +14,9 @@ public enum TextFieldSize: CGFloat {
 }
 
 public extension TextField {
-    func encoreStyle(size: TextFieldSize = .medium, showBackground: Bool = true) -> some View {
+    func encoreStyle(size: TextFieldSize = .medium,
+                     showBackground: Bool = true,
+                     alignment: TextAlignment = .center) -> some View {
         
         self.inter(size: size.rawValue)
             .foregroundColor(.white)
