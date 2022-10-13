@@ -22,6 +22,7 @@ public extension TextField {
             .foregroundColor(.white)
             .multilineTextAlignment(alignment)
             .frame(height: 36)
+            .padding(.horizontal, 15)
             .background(Color.white.opacity(showBackground ? 0.1 : 0))
             .cornerRadius(5)
             .accentColor(.encoreNeon)
@@ -35,8 +36,8 @@ struct EncoreTextFieldStyle_Previews: PreviewProvider {
             Color.black
             VStack {
                 Spacer()
-                TextField("type in a username", text: .constant("ENCORE"))
-                    .encoreStyle(size: .large, showBackground: false)
+                TextField("type in a username", text: .constant(""))
+                    .encoreStyle(size: .large, alignment: .leading)
                 TextField("type in a username", text: .constant("ENCORE"))
                     .encoreStyle(size: .medium, showBackground: false)
                 TextField("type in a username", text: .constant("ENCORE"))
