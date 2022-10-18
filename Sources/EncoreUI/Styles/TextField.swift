@@ -22,7 +22,7 @@ public extension TextField {
         ZStack {
             HStack {
                 Text(placeHolder).inter(size: size.rawValue)
-                    .foregroundColor(.white)
+                    .foregroundColor(.white).opacity(0.7)
                 Spacer()
             }.padding(.horizontal, 15)
             
