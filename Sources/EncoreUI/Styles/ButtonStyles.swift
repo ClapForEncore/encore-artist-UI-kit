@@ -28,7 +28,7 @@ public struct ColorButtonStyle: ButtonStyle {
                 .font(.system(size: 12, weight: .regular, design: .default))
                 .foregroundColor(fontColor)
         }
-        .cornerRadius(9)
+        .cornerRadius(height == .tiny ? 3 : 9)
         .overlay(Color.black.opacity(configuration.isPressed ? 0.3 : 0))
         
     }

@@ -88,7 +88,8 @@ public struct ColorButton: View {
                 }
             } else {
                 HStack {
-                    icon?.resizable().frame(width: 14, height: 14)
+                    icon?.resizable()
+                        .frame(width: 14, height: 14)
                     Text(label)
                         .inter(size: 12)
                         .multilineTextAlignment(.center)
