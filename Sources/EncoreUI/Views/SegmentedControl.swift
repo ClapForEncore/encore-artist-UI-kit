@@ -62,7 +62,6 @@ public struct SegmentedControl: View {
                 selectedValue = customValue ?? 0
             } else {
                 customValue = nil
-                customValue = values.first
             }
         }))
         .keyboardType(.numberPad)
