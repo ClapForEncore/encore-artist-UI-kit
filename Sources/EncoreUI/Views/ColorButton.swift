@@ -13,6 +13,7 @@ public enum ButtonHeight: CGFloat {
     case medium = 50
     case large = 60
     case extraLarge = 128
+    
 }
 
 struct ColorButton_Previews: PreviewProvider {
