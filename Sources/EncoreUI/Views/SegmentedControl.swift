@@ -36,19 +36,19 @@ public struct SegmentedControl: View {
             
             Text(value.description)
                 .padding(.horizontal, 20)
+                .frame(minWidth: 65)
                 .padding(.vertical, 10)
                 .foregroundColor(
                     value == selectedValue ? .black : .gray)
                 .background(
                     value == selectedValue ? Color.white : Color.encoreLeastDark)
                 .inter(size: 14)
-                .frame(minWidth: 65)
         }
     }
 }
 
 struct SegmentedControl_Previews: PreviewProvider {
-     @State static var number = 500
+     @State static var number = 0
     
     static var previews: some View {
         
@@ -56,7 +56,7 @@ struct SegmentedControl_Previews: PreviewProvider {
             Color.black
             VStack {
                 Spacer()
-                SegmentedControl(values: [500, 1500, 2000],
+                SegmentedControl(values: [0, 5, 10, 30],
                                  selectedValue: $number)
                 Spacer()
             }
