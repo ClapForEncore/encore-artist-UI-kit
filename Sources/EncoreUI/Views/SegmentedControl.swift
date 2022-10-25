@@ -33,6 +33,7 @@ public struct SegmentedControl: View {
         @Binding var selectedValue: Int
         
         var body: some View {
+            
             Text(value.description)
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
@@ -41,7 +42,7 @@ public struct SegmentedControl: View {
                 .background(
                     value == selectedValue ? Color.white : Color.encoreLeastDark)
                 .inter(size: 14)
-            
+                .frame(minWidth: 65)
         }
     }
 }
