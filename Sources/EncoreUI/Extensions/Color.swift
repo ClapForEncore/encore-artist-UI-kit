@@ -34,7 +34,7 @@ struct EncoreColorsView_Previews: PreviewProvider {
 
 public extension Color {
             
-    static var gucciGold =                  Color(.guccigold)
+    static var gucciGold =                  Color(.gucciGold)
     static var encoreBodyCopyText =         Color(.encoreBodyCopyText)
     static var encoreNeon =                 Color(.encoreNeon)
     static var encorePurp =                 Color(.encorePurp)
