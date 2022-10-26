@@ -9,6 +9,7 @@ import UIKit
 
 public extension UIColor {
         
+    static var gucciGold: UIColor {                 #colorLiteral(red: 1, green: 0.7215686275, blue: 0.1098039216, alpha: 1) }
     static var encoreBodyCopyText: UIColor {        #colorLiteral(red: 0.8823529412, green: 0.8823529412, blue: 0.8823529412, alpha: 1) }
     static var encoreNeon: UIColor {                #colorLiteral(red: 0.768627451, green: 1, blue: 0, alpha: 1) }
     static var encorePurp: UIColor {                #colorLiteral(red: 0.3019607843, green: 0.07058823529, blue: 0.9019607843, alpha: 1) }
@@ -25,4 +26,5 @@ public extension UIColor {
     static var offWhite: UIColor {                  #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 1) }
     static var transparentWhite: UIColor {          UIColor(white: 1, alpha: 0.15) }
     static var lightGray: UIColor {                 UIColor(white: 0.9, alpha: 1) }
+    
 }
