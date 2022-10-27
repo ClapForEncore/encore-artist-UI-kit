@@ -11,6 +11,14 @@ public enum TextFieldSize: CGFloat {
     case small = 10
     case medium = 14
     case large = 16
+    
+    var fontSize: CGFloat {
+        switch self {
+        case .small: return 10
+        case .medium: return 14
+        case .large: return 22
+        }
+    }
 }
 
 public extension TextField {
@@ -26,7 +34,7 @@ public extension TextField {
                 Spacer()
             }.padding(.horizontal, 15)
             
-            self.inter(size: size.rawValue)
+            self.inter(size: size.fontSize)
                 .foregroundColor(.white)
                 .multilineTextAlignment(alignment)
                 .frame(height: 36)
@@ -35,7 +43,7 @@ public extension TextField {
                 .cornerRadius(5)
                 .accentColor(.encoreNeon)
                 
-        }.padding(.horizontal, 20)
+        }
         
     }
 }
