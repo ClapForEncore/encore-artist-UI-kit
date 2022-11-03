@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct LiveNowDot: View {
+public struct LiveNowDot: View {
     @State private var animate = false
-    var body: some View {
+    public var body: some View {
         Color(hex: "E6F8AB")
             .frame(width: 14, height: 14)
             .cornerRadius(7)
