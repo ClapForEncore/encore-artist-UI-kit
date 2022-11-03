@@ -41,7 +41,7 @@ public struct SegmentedControl: View {
                 .foregroundColor(
                     value == selectedValue ? .black : .gray)
                 .background(
-                    value == selectedValue ? Color.white : Color.encoreLeastDark)
+                    value == selectedValue ? Color.white : Color.black)
                 .inter(size: 14)
         }
     }
