@@ -38,9 +38,8 @@ struct ProgressLabelView_Previews: PreviewProvider {
             VStack {
                 Spacer()
                 HStack {
-                    TileView {
                         VStack {
-                            
+
                         }
                         ProgressLabelView(value: .constant(2800), goal: 3000)
                         ZStack(alignment: .bottomTrailing) {
@@ -50,10 +49,9 @@ struct ProgressLabelView_Previews: PreviewProvider {
                                 .interMedium(size: 6)
                                 .foregroundColor(.encoreNeon)
                         }
-                    }
-                    TileView {
+                    
                         ProgressLabelView(value: .constant(1400), goal: 3000)
-                    }
+                    
                 }
                 .frame(height: 128)
             }

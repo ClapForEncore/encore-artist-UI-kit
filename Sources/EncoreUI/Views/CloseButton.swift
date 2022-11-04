@@ -25,7 +25,7 @@ public struct CloseButton: View {
                     withAnimation { close() }
                 } label: {
                     ZStack {
-                        Color.transparentWhite
+                        Color.white.opacity(0.2)
                         Capsule().frame(width: 2, height: 12)
                             .rotationEffect(.degrees(45))
                         Capsule().frame(width: 2, height: 12)

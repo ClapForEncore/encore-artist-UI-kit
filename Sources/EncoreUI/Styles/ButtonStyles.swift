@@ -29,12 +29,16 @@ public struct ColorButtonStyle: ButtonStyle {
         ZStack {
             color.frame(height: height.rawValue)
             configuration.label
-                .inter(size: 12)
+                .if(height == .tiny) { view in
+                    view.interMedium(size: 9)
+                }
+                .if(height != .tiny) { view in
+                    view.inter(size: 12)
+                }
                 .foregroundColor(fontColor)
         }
-        .cornerRadius(9)
+        .cornerRadius(height == .tiny ? 3 : 9)
         .overlay(Color.black.opacity(configuration.isPressed ? 0.3 : 0))
-        
     }
 }
 

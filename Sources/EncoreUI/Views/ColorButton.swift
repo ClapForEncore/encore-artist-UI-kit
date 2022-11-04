@@ -13,6 +13,7 @@ public enum ButtonHeight: CGFloat {
     case medium = 50
     case large = 60
     case extraLarge = 128
+    
 }
 
 struct ColorButton_Previews: PreviewProvider {
@@ -88,7 +89,8 @@ public struct ColorButton: View {
                 }
             } else {
                 HStack {
-                    icon?.resizable().frame(width: 14, height: 14)
+                    icon?.resizable()
+                        .frame(width: 14, height: 14)
                     Text(label)
                         .inter(size: 12)
                         .multilineTextAlignment(.center)
