@@ -352,6 +352,7 @@ public extension Image {
     static var headphones: Image { Image("headphones", bundle: .module) }
     static var headphones2: Image { Image("headphones2", bundle: .module) }
     static var heart: Image { Image("heart", bundle: .module) }
+    static var heartFill: Image { Image("heartFill", bundle: .module) }
     static var heartSlash: Image { Image("heartSlash", bundle: .module) }
     static var history: Image { Image("history", bundle: .module) }
     static var historyRec: Image { Image("historyRec", bundle: .module) }
@@ -668,6 +669,8 @@ public extension Image {
     static var trendUpRec: Image { Image("trendUpRec", bundle: .module) }
     static var triggers: Image { Image("triggers", bundle: .module) }
     static var trophy: Image { Image("trophy", bundle: .module) }
+    static var trophyFill: Image { Image("trophyFill", bundle: .module) }
+
     static var truck: Image { Image("truck", bundle: .module) }
     static var tv: Image { Image("tv", bundle: .module) }
     static var umbrella: Image { Image("umbrella", bundle: .module) }

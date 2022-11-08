@@ -20,7 +20,8 @@ struct EncoreColorsView_Previews: PreviewProvider {
                 Color.encoreLeastDark
                 Color.encoreKindaDark
                 Color.encoreDark
-                Color.encorePollBlue
+                Color.encoreBlue
+                Color.encorePink
                 Color.transparentWhite
                 
             }.ignoresSafeArea()
@@ -35,6 +36,7 @@ struct EncoreColorsView_Previews: PreviewProvider {
 public extension Color {
             
     static var gucciGold =                  Color(.gucciGold)
+    static var encorePink =                  Color(.encorePink)
     static var encoreBodyCopyText =         Color(.encoreBodyCopyText)
     static var encoreNeon =                 Color(.encoreNeon)
     static var encorePurp =                 Color(.encorePurp)
@@ -45,7 +47,7 @@ public extension Color {
     static var encoreDark =                 Color(.encoreDark)
     static var encoreKindaDark =            Color(.encoreKindaDark)
     static var encoreLeastDark =            Color(.encoreLeastDark)
-    static var encorePollBlue =             Color(.encorePollBlue)
+    static var encoreBlue =             Color(.encoreBlue)
     static var encoreInactiveTextFields =   Color(.encoreInactiveTextFields)
     static var lightGray =                  Color(.lightGray)
     static var transparentWhite =           Color(.transparentWhite)

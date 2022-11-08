@@ -18,7 +18,8 @@ public extension UIColor {
     static var encoreRed: UIColor {                 #colorLiteral(red: 1, green: 0.2784313725, blue: 0.2784313725, alpha: 1) }
     static var encoreAqua: UIColor {                #colorLiteral(red: 0.0862745098, green: 0.8588235294, blue: 0.7647058824, alpha: 1) }
     static var encoreDark: UIColor {                #colorLiteral(red: 0.05490196078, green: 0.05490196078, blue: 0.05490196078, alpha: 1) }
-    static var encorePollBlue: UIColor {            #colorLiteral(red: 0, green: 0.3411764706, blue: 1, alpha: 1) }
+    static var encoreBlue: UIColor {                #colorLiteral(red: 0, green: 0.3411764706, blue: 1, alpha: 1) }
+    static var encorePink: UIColor {                #colorLiteral(red: 1, green: 0, blue: 0.4784313725, alpha: 1) }
     static var encoreLeastDark: UIColor {           #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1) }
     static var encoreInactiveTextFields: UIColor {  #colorLiteral(red: 0.3568627451, green: 0.3568627451, blue: 0.3568627451, alpha: 1) }
     static var encoreKindaDark: UIColor {           #colorLiteral(red: 0.09019607843, green: 0.09019607843, blue: 0.09019607843, alpha: 1) }

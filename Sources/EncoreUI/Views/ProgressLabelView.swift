@@ -21,7 +21,7 @@ struct ProgressLabelView: View {
         ZStack {
             GeometryReader { geometry in
                 Color.black.opacity(0.4).cornerRadius(9)
-                Color.encorePollBlue.cornerRadius(9)
+                Color.encoreBlue.cornerRadius(9)
                     .frame(width: geometry.size.width * (value / goal))
             }
             Text(Int(value).description + "/" + Int(goal).description)
