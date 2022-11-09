@@ -670,7 +670,6 @@ public extension Image {
     static var triggers: Image { Image("triggers", bundle: .module) }
     static var trophy: Image { Image("trophy", bundle: .module) }
     static var trophyFill: Image { Image("trophyFill", bundle: .module) }
-
     static var truck: Image { Image("truck", bundle: .module) }
     static var tv: Image { Image("tv", bundle: .module) }
     static var umbrella: Image { Image("umbrella", bundle: .module) }
