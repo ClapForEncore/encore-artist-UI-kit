@@ -57,13 +57,17 @@ struct Badge_Previews: PreviewProvider {
         VStack {
             Badge(icon: .trophyFill, text: "TOP 3", color: .gucciGold)
             Badge(text: "SUPERFAN", color: Color.white.opacity(0.4))
+            Badge(text: "+3", color: .encoreBlue)
+            
             SuperFanBadge()
             Top3Badge()
             DayOneBadge()
-            Badge(text: "+3", color: .encoreBlue)
             
         }
         .padding(50)
         .background(Color.black)
+        .onAppear {
+            Font.register()
+        }
     }
 }

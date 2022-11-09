@@ -688,6 +688,7 @@ public extension Image {
     static var userCheck: Image { Image("userCheck", bundle: .module) }
     static var userCircle: Image { Image("userCircle", bundle: .module) }
     static var userCross: Image { Image("userCross", bundle: .module) }
+    static var userIcon: Image { Image("userIcon", bundle: .module) }
     static var userMinus: Image { Image("userMinus", bundle: .module) }
     static var userPlus: Image { Image("userPlus", bundle: .module) }
     static var users: Image { Image("users", bundle: .module) }
