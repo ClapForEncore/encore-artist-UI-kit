@@ -37,8 +37,8 @@ public struct ColorButtonStyle: ButtonStyle {
                 }
                 .foregroundColor(fontColor)
         }
-        .cornerRadius(height == .tiny ? 3 : 9)
         .overlay(Color.black.opacity(configuration.isPressed ? 0.3 : 0))
+        .cornerRadius(height == .tiny ? 3 : 9)
     }
 }
 

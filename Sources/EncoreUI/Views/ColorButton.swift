@@ -92,7 +92,6 @@ public struct ColorButton: View {
                     icon?.resizable()
                         .frame(width: 14, height: 14)
                     Text(label)
-                        .inter(size: 12)
                         .multilineTextAlignment(.center)
                 }
             }
