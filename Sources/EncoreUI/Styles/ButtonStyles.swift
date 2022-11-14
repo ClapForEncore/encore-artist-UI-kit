@@ -80,7 +80,8 @@ struct ButtonStyles_Previews: PreviewProvider {
                 Button { } label: {
                     Text("ENCORE")
                 }
-                .buttonStyle(ColorButtonStyle(fontColor: Color.encoreNeon, color: .encoreDark, height: .medium))
+                .buttonStyle(ColorButtonStyle(fontColor: Color.black, color: .white, height: .medium))
+                .width(120)
                 
                 Button { } label: {
                     Text("UP")
