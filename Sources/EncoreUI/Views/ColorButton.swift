@@ -88,7 +88,7 @@ public struct ColorButton: View {
                         .frame(width: 50)
                 }
             } else {
-                HStack {
+                HStack(spacing: 7) {
                     icon?.resizable()
                         .frame(width: 20, height:20)
                     Text(label)
