@@ -19,12 +19,11 @@ public struct EncoreToggle: View {
         ZStack {
             Capsule().foregroundColor(.transparentWhite)
                 .frame(width: 66, height: 38)
-            Color(hue: 74/255, saturation: isOn ? 1 : 0, brightness: 1)
-                .opacity(isOn ? 1 : 0.15)
+            Group { isOn ? Color.encoreGreen : Color.white }
+                .opacity(isOn ? 1 : 0.25)
                 .clipShape(Circle())
                 .offset(x: isOn ? 14 : -14)
                 .frame(width: 28, height: 28)
-            
         }
         .onTapGesture {
             withAnimation(.spring()) { isOn.toggle() }
@@ -33,8 +32,11 @@ public struct EncoreToggle: View {
 }
 
 struct EncoreToggle_Previews: PreviewProvider {
-    
+   
     static var previews: some View {
-        EncoreToggle(isOn: .constant(true))
+        ZStack {
+            Color.black
+            EncoreToggle(isOn: .constant(true))
+        }
     }
 }
