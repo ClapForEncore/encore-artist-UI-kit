@@ -171,7 +171,7 @@ public enum HelpPageType: String {
         case .autoReconnect: return "Allows you to automatically connect to a device in the event of a disconnection."
         case .bestPractices: return "Best practices"
         case .clapBalance: return "Your clap balance contains all claps from shows and referrals that are ready to withdraw."
-        case .clapGoals: return "Set one or multiple goals you want to hit throuhgout your show. You can add a title to encourage fans to clap. For example, \"performing a new song at 1,000 claps\""
+        case .clapGoals: return "Set one or multiple goals you want to hit throughout your show. You can add a title to encourage fans to clap. For example, \"performing a new song at 1,000 claps\""
         case .connectedCameras: return "Toggle through the connected devices. You can use connected cameras for different angles or effects."
         case .connectedDevices: return "All the devices connected as cameras will appear here. You can also disconnect any devices from the list."
         case .connectSettings: return "Connect settings enable customization when connecting to or from other devices."
