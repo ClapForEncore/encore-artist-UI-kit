@@ -10,7 +10,7 @@ import SwiftUI
 
 struct FullScreenHelpView_Previews: PreviewProvider {
     static var previews: some View {
-        FullScreenHelpView(type: .clapGoals, action: { }, close: { })
+        FullScreenHelpView(type: .polls, action: { }, close: { })
     }
 }
 
@@ -95,7 +95,7 @@ public enum HelpPageType: String {
         case .meshing: return Image("meshing", bundle: .module)
         case .payouts: return Image("payouts", bundle: .module)
         case .pendingPayouts: return Image("pendingPayouts", bundle: .module)
-        case .polls: return Image("polls", bundle: .module)
+        case .polls: return Image("polls3D", bundle: .module)
         case .promote: return Image("promote", bundle: .module)
         case .record: return Image("record", bundle: .module)
         case .referrals: return Image("referrals", bundle: .module)
@@ -240,9 +240,10 @@ public struct FullScreenHelpView: View {
                     .frame(width: 330, height: 300)
                 textView
                 Spacer()
-                ColorButton(label: "More information", color: .transparentWhite, fontColor: .white, height: .medium) {
-                    action()
-                }.padding(.horizontal, 50)
+                //TODO: 
+//                ColorButton(label: "More information", color: .transparentWhite, fontColor: .white, height: .medium) {
+//                    action()
+//                }.padding(.horizontal, 50)
             }
             CloseButton { close() }
                 

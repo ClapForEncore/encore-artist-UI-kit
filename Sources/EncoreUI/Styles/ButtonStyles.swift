@@ -36,6 +36,7 @@ public struct ColorButtonStyle: ButtonStyle {
                     view.inter(size: 12)
                 }
                 .foregroundColor(fontColor)
+                
         }
         .overlay(Color.black.opacity(configuration.isPressed ? 0.3 : 0))
         .cornerRadius(height == .tiny ? 3 : 9)
@@ -79,6 +80,11 @@ struct ButtonStyles_Previews: PreviewProvider {
 
                 Button { } label: {
                     Text("ENCORE")
+                }
+                .buttonStyle(ColorButtonStyle(fontColor: Color.black, color: .white, height: .medium))
+                .width(120)
+                Button { } label: {
+                    Image.encoreWordmark
                 }
                 .buttonStyle(ColorButtonStyle(fontColor: Color.black, color: .white, height: .medium))
                 .width(120)
