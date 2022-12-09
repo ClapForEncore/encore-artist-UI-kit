@@ -8,7 +8,7 @@
 import SwiftUI
 
 public struct BackgroundBlurView: UIViewRepresentable {
-    
+    public init() { }
     public func makeUIView(context: Context) -> UIView {
         let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
         DispatchQueue.main.async {
