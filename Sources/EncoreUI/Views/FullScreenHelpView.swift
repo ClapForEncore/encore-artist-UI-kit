@@ -25,7 +25,6 @@ public struct FullScreenHelpView: View {
     public var body: some View {
         
         ZStack {
-            Color.black.opacity(0.3).ignoresSafeArea()
             BackgroundBlurView().ignoresSafeArea()
             VStack {
                 Spacer()

@@ -8,8 +8,8 @@
 import SwiftUI
 
 public struct BackgroundBlurView: UIViewRepresentable {
-    var darkness = 0.4
-    public init(darkness: CGFloat = 0.4) { }
+    var darkness = 0.7
+    public init(darkness: CGFloat = 0.7) { }
     public func makeUIView(context: Context) -> UIView {
         let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
         DispatchQueue.main.async {
