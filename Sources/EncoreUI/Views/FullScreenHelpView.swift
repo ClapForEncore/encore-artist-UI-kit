@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+public struct BackgroundBlurView: UIViewRepresentable {
+    
+    public func makeUIView(context: Context) -> UIView {
+        let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
+        DispatchQueue.main.async {
+            view.superview?.superview?.backgroundColor = .clear
+        }
+        return view
+    }
+
+    public func updateUIView(_ uiView: UIView, context: Context) {}
+}
+
 public struct FullScreenHelpView: View {
     
     @State var type: HelpPageType
@@ -24,9 +37,8 @@ public struct FullScreenHelpView: View {
     public var body: some View {
         
         ZStack {
-            BlackGradient()
-            Color.clear.background(.ultraThinMaterial)
-                .colorScheme(.dark)
+            Color.black.opacity(0.3).ignoresSafeArea()
+            BackgroundBlurView().ignoresSafeArea()
             VStack {
                 Spacer()
                 type.image
@@ -63,7 +75,7 @@ public struct FullScreenHelpView: View {
 
 struct FullScreenHelpView_Previews: PreviewProvider {
     static var previews: some View {
-        FullScreenHelpView(type: .polls, action: { }, close: { })
+        FullScreenHelpView(type: .audioSource, action: { }, close: { })
     }
 }
 
