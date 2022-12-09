@@ -7,6 +7,59 @@
 
 import SwiftUI
 
+public struct FullScreenHelpView: View {
+    
+    @State var type: HelpPageType
+    @State var action: () -> Void
+    @State var close: () -> Void
+    
+    public init(type: HelpPageType = .info,
+                action: @escaping () -> Void,
+                close: @escaping () -> Void) {
+        self.type = type
+        self.action = action
+        self.close = close
+    }
+    
+    public var body: some View {
+        
+        ZStack {
+            BlackGradient()
+            Color.clear.background(.ultraThinMaterial)
+                .colorScheme(.dark)
+            VStack {
+                Spacer()
+                type.image
+                    .resizable()
+                    .frame(width: 330, height: 300)
+                textView
+                Spacer()
+                //TODO: 
+//                ColorButton(label: "More information", color: .transparentWhite, fontColor: .white, height: .medium) {
+//                    action()
+//                }.padding(.horizontal, 50)
+            }
+            CloseButton { close() }
+                
+        }
+    }
+    var textView: some View {
+        VStack(spacing: 20) {
+            Text(type.title)
+                .inter(size: 32)
+                .foregroundColor(.white)
+            
+            Text(type.explaination)
+                .foregroundColor(.white)
+                .inter(size: 14)
+                .multilineTextAlignment(.center)
+            
+            
+        }.frame(maxWidth: 300)
+        .padding(.horizontal, 30)
+        
+    }
+}
 
 struct FullScreenHelpView_Previews: PreviewProvider {
     static var previews: some View {
@@ -210,59 +263,3 @@ public enum HelpPageType: String {
     }
 }
 
-public struct FullScreenHelpView: View {
-    
-    @State var type: HelpPageType
-    @State var action: () -> Void
-    @State var close: () -> Void
-    
-    public init(type: HelpPageType = .info,
-                action: @escaping () -> Void,
-                close: @escaping () -> Void) {
-        self.type = type
-        self.action = action
-        self.close = close
-    }
-    
-    
-    public var body: some View {
-        
-        ZStack {
-            Color.black.ignoresSafeArea()
-            Image("livingRoom", bundle: .module).resizable()
-            BlackGradient()
-            Color.clear.background(.ultraThinMaterial)
-                .colorScheme(.dark)
-            VStack {
-                Spacer()
-                type.image
-                    .resizable()
-                    .frame(width: 330, height: 300)
-                textView
-                Spacer()
-                //TODO: 
-//                ColorButton(label: "More information", color: .transparentWhite, fontColor: .white, height: .medium) {
-//                    action()
-//                }.padding(.horizontal, 50)
-            }
-            CloseButton { close() }
-                
-        }
-    }
-    var textView: some View {
-        VStack(spacing: 20) {
-            Text(type.title)
-                .inter(size: 32)
-                .foregroundColor(.white)
-            
-            Text(type.explaination)
-                .foregroundColor(.white)
-                .inter(size: 14)
-                .multilineTextAlignment(.center)
-            
-            
-        }.frame(maxWidth: 300)
-        .padding(.horizontal, 30)
-        
-    }
-}
