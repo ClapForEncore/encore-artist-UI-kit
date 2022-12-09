@@ -19,9 +19,7 @@ struct ImageExtension_Previews: PreviewProvider {
 }
 
 public extension Image {
-    
-    
-    
+        
     static var verifiedIcon: Image { Image("verifiedIcon", bundle: .module) }
     static var enterLobby: Image { Image("enterLobby", bundle: .module) }
     static var encoreLogoECentered: Image { Image("encoreLogoECentered", bundle: .module) }
@@ -29,6 +27,8 @@ public extension Image {
     static var encoreWordmark: Image { Image("encoreWordmark", bundle: .module) }
     
     static var clapIcon: Image { Image("clapIcon", bundle: .module) }
+    static var claps3d: Image { Image("clapBalance", bundle: .module) }
+
     static var polls: Image { Image("polls", bundle: .module) }
     static var ar: Image { Image("ar", bundle: .module) }
     static var recordTool: Image { Image("recordTool", bundle: .module) }
@@ -36,6 +36,7 @@ public extension Image {
     static var stopCircleDash: Image { Image("stopCircleDash", bundle: .module) }
     static var chat: Image { Image("chat", bundle: .module) }
     
+
 
     //Anron icons
     

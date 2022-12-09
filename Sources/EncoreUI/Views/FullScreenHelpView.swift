@@ -10,9 +10,9 @@ import SwiftUI
 public struct BackgroundBlurView: UIViewRepresentable {
     public init() { }
     public func makeUIView(context: Context) -> UIView {
-        let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
+        let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
         DispatchQueue.main.async {
-            view.superview?.superview?.backgroundColor = .clear
+            view.superview?.superview?.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         }
         return view
     }
