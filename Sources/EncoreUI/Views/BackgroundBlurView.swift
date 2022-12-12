@@ -11,7 +11,9 @@ import SwiftUI
 public struct BackgroundBlurView: View {
     
     var darkness = 0.7
-    
+    public init(darkness: Double = 0.7) {
+        self.darkness = darkness
+    }
     public var body: some View {
         ZStack {
             Color.black.opacity(darkness)
