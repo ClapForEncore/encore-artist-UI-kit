@@ -160,9 +160,9 @@ public enum HelpPageType: String {
         case .watermark: return Image("watermark", bundle: .module)
         case .whatIsEncore: return Image("whatIsEncore", bundle: .module)
         case .yourLiveShow: return Image("yourLiveShow", bundle: .module)
-        case .displayBuffer: return Image("info3d", bundle: .module)
-        case .setBuffers: return Image("info3d", bundle: .module)
-        case .streamBuffer: return Image("info3d", bundle: .module)
+        case .displayBuffer: return Image("genericInfo", bundle: .module)
+        case .setBuffers: return Image("genericInfo", bundle: .module)
+        case .streamBuffer: return Image("genericInfo", bundle: .module)
         }
     }
     public var title: String {
@@ -211,6 +211,9 @@ public enum HelpPageType: String {
         case .watermark: return "Watermark"
         case .whatIsEncore: return "What is Encore"
         case .yourLiveShow: return "Your Live Show"
+        case .displayBuffer: return "Display Buffer"
+        case .setBuffers: return "Set Buffers"
+        case .streamBuffer: return "Stream Buffer"
         }
     }
     
