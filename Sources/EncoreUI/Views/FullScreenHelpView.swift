@@ -87,6 +87,7 @@ public enum HelpPageType: String {
     case genericInfo
     case gettingStarted
     case hdmiSettings
+    case hdmiOutput
     case info
     case leaderboard
     case lifetimeEarnings
@@ -136,6 +137,8 @@ public enum HelpPageType: String {
         case .genericInfo: return Image("genericInfo", bundle: .module)
         case .gettingStarted: return Image("gettingStarted", bundle: .module)
         case .hdmiSettings: return Image("hdmiSettings", bundle: .module)
+        case .hdmiOutput: return Image("hdmiSettings", bundle: .module)
+
         case .info: return Image("info3d", bundle: .module)
         case .leaderboard: return Image("leaderboard", bundle: .module)
         case .lifetimeEarnings: return Image("lifetimeEarnings", bundle: .module)
@@ -187,6 +190,7 @@ public enum HelpPageType: String {
         case .genericInfo: return "Generic Info"
         case .gettingStarted: return "Getting Started"
         case .hdmiSettings: return "HDMI Settings"
+        case .hdmiOutput: return "HDMI Output"
         case .info: return "Info"
         case .leaderboard: return "Leaderboard"
         case .lifetimeEarnings: return "Lifetime Earnings"
@@ -244,6 +248,7 @@ public enum HelpPageType: String {
         case .genericInfo: return "Generic Info"
         case .gettingStarted: return "Getting Started"
         case .hdmiSettings: return "View your show on an external video display like a TV or Monitor using an HDMI output from your device. You can see live video as well as the lobby and leaderboard."
+        case .hdmiOutput: return  "Chose the device you would like to output to."
         case .info: return "Info"
         case .leaderboard: return "All the fans in your lobby will appear here. Fans are ordered by amount of claps."
         case .lifetimeEarnings: return "Lifetime earnings includes all history of claps earned from shows and referrals including payouts and current balance in the Encore Bank."
