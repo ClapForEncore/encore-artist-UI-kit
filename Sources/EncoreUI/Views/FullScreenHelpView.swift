@@ -33,10 +33,7 @@ public struct FullScreenHelpView: View {
                     .frame(width: 330, height: 300)
                 textView
                 Spacer()
-                //TODO: 
-//                ColorButton(label: "More information", color: .transparentWhite, fontColor: .white, height: .medium) {
-//                    action()
-//                }.padding(.horizontal, 50)
+                //TODO:  ColorButton(label: "More information",
             }
             CloseButton { close() }
                 
@@ -62,7 +59,7 @@ public struct FullScreenHelpView: View {
 
 struct FullScreenHelpView_Previews: PreviewProvider {
     static var previews: some View {
-        FullScreenHelpView(type: .audioSource, action: { }, close: { })
+        FullScreenHelpView(type: .setBuffers, action: { }, close: { })
     }
 }
 
@@ -83,6 +80,7 @@ public enum HelpPageType: String {
     case connectedDevices
     case connectSettings
     case connectToDevice
+    case displayBuffer
     case dmEarnings
     case encoreBank
     case flipHorizontal
@@ -108,6 +106,8 @@ public enum HelpPageType: String {
     case rotate90
     case searchFans
     case sendToAll
+    case setBuffers
+    case streamBuffer
     case testAudio
     case videoSource
     case watermark
@@ -149,7 +149,7 @@ public enum HelpPageType: String {
         case .pendingPayouts: return Image("pendingPayouts", bundle: .module)
         case .polls: return Image("polls3D", bundle: .module)
         case .promote: return Image("promote", bundle: .module)
-        case .record: return Image("record", bundle: .module)
+        case .record: return Image("record3d", bundle: .module)
         case .referrals: return Image("referrals", bundle: .module)
         case .replayEarnings: return Image("replayEarnings", bundle: .module)
         case .rotate90: return Image("rotate90", bundle: .module)
@@ -160,6 +160,9 @@ public enum HelpPageType: String {
         case .watermark: return Image("watermark", bundle: .module)
         case .whatIsEncore: return Image("whatIsEncore", bundle: .module)
         case .yourLiveShow: return Image("yourLiveShow", bundle: .module)
+        case .displayBuffer: return Image("info3d", bundle: .module)
+        case .setBuffers: return Image("info3d", bundle: .module)
+        case .streamBuffer: return Image("info3d", bundle: .module)
         }
     }
     public var title: String {
@@ -215,9 +218,13 @@ public enum HelpPageType: String {
     public var explaination : String {
         switch self {
         case .audioSource: return "Audio source allows you to select which microphone you want to broadcast from on local and connected devices."
+            
         case .addAR: return "Add scenes and objects to incorporate into your stage. You can upload assets from your device or the ones provided in the Encore Library."
+            
         case .allowConnections: return "Allows your device to be discoverable from others that can connect as additional cameras for your show."
-        case .arSettings: return "AR Settings"
+            
+        case .arSettings: return "Save your current scene, load a new one or clear your progress to start from scratch."
+            
         case .audioDevice: return "Select an input as the primary microphone in your stream."
         case .audioLevel: return "Test the levels of your audio input to ensure the volume is optimal for your stream."
         case .autoReconnect: return "Allows you to automatically connect to a device in the event of a disconnection."
@@ -246,18 +253,28 @@ public enum HelpPageType: String {
         case .payouts: return "A history of all withdrawls to date from the Encore Bank to your bank account."
         case .pendingPayouts: return "Pending payouts are on the way to your bank account from the Encore Bank. Most transactions take up to 3 business days."
         case .polls: return "Have your fans interact in a poll. Specify a question with a series of answers and see which one wins. You can use this to dictate the next song or even use it for trivia."
-        case .promote: return "Promote"
-        case .record: return "Record"
+        case .promote: return "Generate posters for your next show to share on social media."
+        case .record: return "Save a recording of your show or a part of it to your camera roll. You can also capture photos from your performance."
         case .referrals: return "A history of all referrals to date. For every artist you refer you recieve a bonus of 10% of claps they earn on shows."
         case .replayEarnings: return "A history of all earnings from Replays of your past shows."
         case .rotate90: return "Rotate your video output to fit a display."
         case .searchFans: return "Quickly search for a fan to invite them to Backstage Pass or remove them from the show."
+            
         case .sendToAll: return "When enabled this will send the current trigger to all cameras. When disabled it will only affect the selected device."
+            
         case .testAudio: return "Test Audio"
+            
         case .videoSource: return "Video source allows you to select which lens you want to broadcast from on local and connected devices."
+            
         case .watermark: return "Toggle a watermark during your broadcast and recording."
+            
         case .whatIsEncore: return "What is Encore"
         case .yourLiveShow: return "Your Live Show"
+        case .displayBuffer:
+            return "This adjusts the delay of the output to a display. You can adjust if you are seeing interruptions in the output."
+        case .setBuffers: return "When using connected devices buffers allow for flexibility when seeing output issues."
+            
+        case .streamBuffer: return "This adjusts the delay of the broadcast. You can adjust if viewers are seeing interruptions in the stream."
         }
     }
 }
