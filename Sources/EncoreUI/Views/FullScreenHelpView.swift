@@ -138,8 +138,7 @@ public enum HelpPageType: String {
         case .gettingStarted: return Image("gettingStarted", bundle: .module)
         case .hdmiSettings: return Image("hdmiSettings", bundle: .module)
         case .hdmiOutput: return Image("hdmiSettings", bundle: .module)
-
-        case .info: return Image("info3d", bundle: .module)
+        case .info: return Image("genericInfo", bundle: .module)
         case .leaderboard: return Image("leaderboard", bundle: .module)
         case .lifetimeEarnings: return Image("lifetimeEarnings", bundle: .module)
         case .localCamera: return Image("localCamera", bundle: .module)

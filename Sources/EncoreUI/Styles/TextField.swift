@@ -29,9 +29,14 @@ public extension TextField {
         
         ZStack {
             HStack {
+                if alignment == .center || alignment == .trailing {
+                    Spacer()
+                }
                 Text(placeHolder).inter(size: size.rawValue)
                     .foregroundColor(.white).opacity(0.7)
-                Spacer()
+                if alignment == .leading ||  alignment == .center {
+                    Spacer()
+                }
             }.padding(.horizontal, 15)
             
             self.inter(size: size.fontSize)
