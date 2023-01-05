@@ -389,6 +389,7 @@ public extension Image {
     static var infinity: Image { Image("infinity", bundle: .module) }
     static var infinityRec: Image { Image("infinityRec", bundle: .module) }
     static var info: Image { Image("info", bundle: .module) }
+    static var infoIcon: Image { Image("infoIcon", bundle: .module) }
     static var invoice: Image { Image("invoice", bundle: .module) }
     static var keyboard: Image { Image("keyboard", bundle: .module) }
     static var keyboardHide: Image { Image("keyboardHide", bundle: .module) }
