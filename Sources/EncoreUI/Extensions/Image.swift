@@ -323,6 +323,7 @@ public extension Image {
     static var flashcard: Image { Image("flashcard", bundle: .module) }
     static var folder: Image { Image("folder", bundle: .module) }
     static var folderOpen: Image { Image("folderOpen", bundle: .module) }
+    static var folderPlus: Image { Image("folderPlus", bundle: .module) }
     static var forward: Image { Image("forward", bundle: .module) }
     static var forward10: Image { Image("forward10", bundle: .module) }
     static var forward10Rec: Image { Image("forward10Rec", bundle: .module) }
@@ -531,6 +532,7 @@ public extension Image {
     static var plus: Image { Image("plus", bundle: .module) }
     static var plusCircle: Image { Image("plusCircle", bundle: .module) }
     static var plusRec: Image { Image("plusRec", bundle: .module) }
+    static var plusRecFill: Image { Image("plusRecFill", bundle: .module) }
     static var power: Image { Image("power", bundle: .module) }
     static var powerRec: Image { Image("powerRec", bundle: .module) }
     static var presentationChart: Image { Image("presentationChart", bundle: .module) }
