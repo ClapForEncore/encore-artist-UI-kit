@@ -322,6 +322,7 @@ public extension Image {
     static var flag3: Image { Image("flag3", bundle: .module) }
     static var flashcard: Image { Image("flashcard", bundle: .module) }
     static var folder: Image { Image("folder", bundle: .module) }
+    static var folderFill: Image { Image("folder", bundle: .module) }
     static var folderOpen: Image { Image("folderOpen", bundle: .module) }
     static var folderPlus: Image { Image("folderPlus", bundle: .module) }
     static var forward: Image { Image("forward", bundle: .module) }
