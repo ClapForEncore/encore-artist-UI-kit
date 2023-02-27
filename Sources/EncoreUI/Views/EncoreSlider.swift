@@ -7,20 +7,13 @@
 
 import SwiftUI
 
-struct Drawer: View {
-     
-    
-    var body: some View {
-       
-        
-    }
-}
-
-struct Drawer_Previews: PreviewProvider {
+struct EncoreSlider_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black.ignoresSafeArea()
-            Drawer()
+            ScrollView(.horizontal ) {
+                EncoreSlider(value: 0.3)
+            }
         }
     }
 }
@@ -29,7 +22,6 @@ struct EncoreSlider: View {
     
     @State var value: CGFloat = 0.5
     var body: some View {
-        
         HStack(spacing: 5) {
             Text("0").inter(size: 10)
                 .foregroundColor(.white)
@@ -62,5 +54,6 @@ struct EncoreSlider: View {
                 .foregroundColor(.white)
         }
         .height(28)
+        .width(150)
     }
 }
