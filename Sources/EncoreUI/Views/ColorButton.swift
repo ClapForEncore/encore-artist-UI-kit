@@ -24,6 +24,10 @@ struct ColorButton_Previews: PreviewProvider {
             Image("livingRoom", bundle: .module).resizable().aspectRatio(contentMode: .fit).ignoresSafeArea()
             BlackGradient()
             VStack(spacing: 8) {
+                
+                Spacer()
+                ColorButton(label: "CONFIRM",color: .encoreNeon, height: .tiny, border: true) { }
+                    .width(51)
                 Spacer()
                 HStack {
                     ColorButton(icon: Image.plus,
@@ -63,14 +67,16 @@ public struct ColorButton: View {
     var color: Color
     var fontColor: Color
     var height: ButtonHeight
+    var border: Bool
     var action: () -> Void
     
-    public init(icon: Image? = nil, label: String, color: Color = .white, fontColor: Color = .black, height: ButtonHeight = .medium, action: @escaping () -> Void) {
+    public init(icon: Image? = nil, label: String, color: Color = .white, fontColor: Color = .black, height: ButtonHeight = .medium, border: Bool = false, action: @escaping () -> Void) {
         self.icon = icon
         self.label = label
         self.color = color
         self.fontColor = fontColor
         self.height = height
+        self.border = border
         self.action = action
     }
     
@@ -96,7 +102,7 @@ public struct ColorButton: View {
                 }
             }
         }
-        .buttonStyle(ColorButtonStyle(fontColor: fontColor, color: color, height: height))
+        .buttonStyle(ColorButtonStyle(fontColor: fontColor, color: color, height: height, border: border))
         
     }
 }

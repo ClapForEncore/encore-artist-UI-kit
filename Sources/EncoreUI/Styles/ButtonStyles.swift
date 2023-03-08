@@ -16,18 +16,28 @@ public struct Darker: ButtonStyle {
 
 public struct ColorButtonStyle: ButtonStyle {
     
-    var fontColor: Color = .encoreDark
-    var color: Color = .white
-    var height: ButtonHeight = .medium
-    public init(fontColor: Color, color: Color, height: ButtonHeight) {
+    var fontColor: Color
+    var color: Color
+    var height: ButtonHeight
+    var border: Bool
+    
+    public init(fontColor: Color = .encoreDark, color: Color = .white, height: ButtonHeight = .medium, border: Bool = false) {
         self.fontColor = fontColor
         self.color = color
         self.height = height
+        self.border = border
     }
     public func makeBody(configuration: Configuration) -> some View {
         
         ZStack {
-            color.frame(height: height.rawValue)
+            
+            if border {
+                RoundedRectangle(cornerRadius: height == .tiny ? 3 : 9)
+                    .stroke(color, lineWidth: height == .tiny ? 1 : 2)
+            } else {
+                color.frame(height: height.rawValue)
+            }
+            
             configuration.label
                 .if(height == .tiny) { view in
                     view.interMedium(size: 9)
@@ -35,11 +45,12 @@ public struct ColorButtonStyle: ButtonStyle {
                 .if(height != .tiny) { view in
                     view.inter(size: 12)
                 }
-                .foregroundColor(fontColor)
+                .foregroundColor(border ? color : fontColor)
                 
         }
         .overlay(Color.black.opacity(configuration.isPressed ? 0.3 : 0))
         .cornerRadius(height == .tiny ? 3 : 9)
+        .height(height.rawValue)
     }
 }
 
@@ -77,7 +88,17 @@ struct ButtonStyles_Previews: PreviewProvider {
             BlackGradient()
             
             VStack {
-
+                HStack {
+                    
+                    ColorButton(label: "CANCEL",color: .clear, fontColor: .encoreRed, height: .tiny) {
+                    }.width(51)
+                    Spacer()
+                    ColorButton(label: "CONFIRM",color: .encoreGreen, height: .tiny, border: true) {
+                    }.width(51)
+                }
+                ColorButton(label: "CONFIRM", border: true) {
+                }
+                
                 Button { } label: {
                     Text("ENCORE")
                 }
