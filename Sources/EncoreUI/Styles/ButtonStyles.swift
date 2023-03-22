@@ -27,13 +27,16 @@ public struct ColorButtonStyle: ButtonStyle {
         self.height = height
         self.border = border
     }
+    private var rect: some Shape  {
+        RoundedRectangle(cornerRadius: height == .tiny ? 3 : 9)
+    }
     public func makeBody(configuration: Configuration) -> some View {
         
         ZStack {
-            
             if border {
-                RoundedRectangle(cornerRadius: height == .tiny ? 3 : 9)
-                    .stroke(color, lineWidth: height == .tiny ? 1 : 2)
+                rect
+                .stroke(color, lineWidth: height == .tiny ? 1 : 2)
+                .contentShape(rect)
             } else {
                 color.frame(height: height.rawValue)
             }

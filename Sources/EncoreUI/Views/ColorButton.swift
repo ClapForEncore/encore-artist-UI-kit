@@ -87,7 +87,10 @@ public struct ColorButton: View {
         } label: {
             if height == .extraLarge {
                 VStack {
-                    icon
+                    icon?.resizable()
+                        .renderingMode(.template)
+                        .width(24)
+                        .height(24)
                     Text(label)
                         .inter(size: 12)
                         .multilineTextAlignment(.center)
