@@ -24,33 +24,36 @@ import SwiftUI
 //    }
 //}
 
-public struct CustomSlider: View {
+public enum SliderPrecision: String {
+    case doubleDecimal
+    case singleDecimal
+    case integer
     
-
-    @Binding var value: CGFloat
-    
-    var minValue: CGFloat = 0
-    var maxValue: CGFloat = 1
-    var precision: Precision = .singleDecimal
-    
-    enum Precision: String {
-        case doubleDecimal
-        case singleDecimal
-        case integer
-        
-        var format: String {
-            switch self {
-            case .doubleDecimal: return "%.2f"
-            case .singleDecimal: return "%.1f"
-            case .integer: return  "%.0f"
-            }
+    var format: String {
+        switch self {
+        case .doubleDecimal: return "%.2f"
+        case .singleDecimal: return "%.1f"
+        case .integer: return  "%.0f"
         }
     }
+}
+public struct CustomSlider: View {
+    @Binding var value: CGFloat
+    var minValue: CGFloat = 0
+    var maxValue: CGFloat = 1
+    var precision: SliderPrecision = .singleDecimal
+    
    
-   
+    public init(value: Binding<CGFloat>, minValue: CGFloat, maxValue: CGFloat, precision: SliderPrecision = .singleDecimal) {
+        self._value = value
+        self.minValue = minValue
+        self.maxValue = maxValue
+        self.precision = precision
+    }
+    
     public var body: some View {
         HStack(spacing: 5) {
-            Text(String(format: Precision.integer.format, minValue))
+            Text(String(format: SliderPrecision.integer.format, minValue))
                 .inter(size: 10)
                 .foregroundColor(.white)
             
@@ -78,7 +81,7 @@ public struct CustomSlider: View {
                     })
                 )
             }
-            Text(String(format: Precision.integer.format, maxValue)).inter(size: 10)
+            Text(String(format: SliderPrecision.integer.format, maxValue)).inter(size: 10)
                 .foregroundColor(.white)
         }
         .height(28)
