@@ -134,7 +134,6 @@ struct TextCell: View {
 
 class TestModel : ObservableObject {
     @Published var selected: DropDownMenu.Option = .medium
-    
 }
 
 extension DropDownMenu {

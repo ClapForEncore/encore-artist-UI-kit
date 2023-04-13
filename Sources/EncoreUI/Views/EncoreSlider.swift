@@ -7,23 +7,49 @@
 
 import SwiftUI
 
-struct EncoreSlider_Previews: PreviewProvider {
-    static var previews: some View {
-        ZStack {
-            Color.black.ignoresSafeArea()
-            ScrollView(.horizontal ) {
-                EncoreSlider(value: 0.3)
-            }
-        }
-    }
-}
+//class Example: ObservableObject {
+//        @Published var value: CGFloat = 0.5
+//        @Published var toggleValue: Bool = false
+//}
+
+//struct EncoreSlider_Previews: PreviewProvider {
+//    static var example = Example()
+//    static var previews: some View {
+//        ZStack {
+//            Color.black.ignoresSafeArea()
+//            ScrollView(.horizontal ) {
+//                EncoreSlider()
+//            }
+//        }.environmentObject(example)
+//    }
+//}
 
 struct EncoreSlider: View {
     
-    @State var value: CGFloat = 0.5
+    var minValue: CGFloat = 0
+    var maxValue: CGFloat = 1
+    var precision: Precision = .singleDecimal
+    
+    enum Precision: String {
+        case doubleDecimal
+        case singleDecimal
+        case integer
+        
+        var format: String {
+            switch self {
+            case .doubleDecimal: return "%.2f"
+            case .singleDecimal: return "%.1f"
+            case .integer: return  "%.0f"
+            }
+        }
+    }
+    //@EnvironmentObject var example: Example
+    #warning("use below for PROD, above for preview here ")
+    @Binding var value: CGFloat
+   
     var body: some View {
         HStack(spacing: 5) {
-            Text("0").inter(size: 10)
+            Text(String(format: Precision.integer.format, minValue)).inter(size: 10)
                 .foregroundColor(.white)
             
             GeometryReader { geometry in
@@ -50,7 +76,7 @@ struct EncoreSlider: View {
                     })
                 )
             }
-            Text("100").inter(size: 10)
+            Text(String(format: Precision.integer.format, maxValue)).inter(size: 10)
                 .foregroundColor(.white)
         }
         .height(28)
