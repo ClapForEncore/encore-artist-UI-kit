@@ -49,7 +49,8 @@ struct CustomSlider: View {
    
     var body: some View {
         HStack(spacing: 5) {
-            Text(String(format: Precision.integer.format, minValue)).inter(size: 10)
+            Text(String(format: Precision.integer.format, minValue))
+                .inter(size: 10)
                 .foregroundColor(.white)
             
             GeometryReader { geometry in
@@ -67,12 +68,12 @@ struct CustomSlider: View {
                             Text(Int(value * 100).description)
                                 .inter(size: 10)
                         }
-                        .position(x: geometry.size.width * value, y: 14)
+                        .position(x: geometry.size.width * (value / maxValue), y: 14)
                     }
                 }
                 .gesture(DragGesture(minimumDistance: 0)
                     .onChanged({ value in
-                        self.value = min(max(0, CGFloat(value.location.x / geometry.size.width)), 1)
+                        self.value = min(max(0, CGFloat(value.location.x / geometry.size.width) * maxValue), maxValue)
                     })
                 )
             }
