@@ -40,7 +40,7 @@ public enum SliderPrecision: String {
 public struct CustomSlider: View {
     @Binding var value: CGFloat
     var minValue: CGFloat = 0
-    var maxValue: CGFloat = 1
+    var maxValue: CGFloat = 100
     var precision: SliderPrecision = .singleDecimal
     
    
@@ -69,7 +69,7 @@ public struct CustomSlider: View {
                         ZStack {
                             Color.encoreNeon.cornerRadius(25)
                                 .width(28).height(28)
-                            Text(Int(value * 100).description)
+                            Text(Int(value).description)
                                 .inter(size: 10)
                         }
                         .position(x: geometry.size.width * (value / maxValue), y: 14)
@@ -81,10 +81,11 @@ public struct CustomSlider: View {
                     })
                 )
             }
+            .width(200)
             Text(String(format: SliderPrecision.integer.format, maxValue)).inter(size: 10)
                 .foregroundColor(.white)
         }
         .height(28)
-        .width(150)
+        
     }
 }
