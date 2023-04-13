@@ -24,7 +24,7 @@ import SwiftUI
 //    }
 //}
 
-struct EncoreSlider: View {
+struct CustomSlider: View {
     
     var minValue: CGFloat = 0
     var maxValue: CGFloat = 1
