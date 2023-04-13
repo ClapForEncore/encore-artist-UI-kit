@@ -26,6 +26,10 @@ import SwiftUI
 
 struct CustomSlider: View {
     
+    //@EnvironmentObject var example: Example
+    #warning("use below for PROD, above for preview here ")
+    @Binding var value: CGFloat
+    
     var minValue: CGFloat = 0
     var maxValue: CGFloat = 1
     var precision: Precision = .singleDecimal
@@ -43,9 +47,7 @@ struct CustomSlider: View {
             }
         }
     }
-    //@EnvironmentObject var example: Example
-    #warning("use below for PROD, above for preview here ")
-    @Binding var value: CGFloat
+   
    
     var body: some View {
         HStack(spacing: 5) {
